@@ -206,34 +206,6 @@
             //     console.log(data);
             // }
 
-            function buildMaxHeap() {
-                let n = data.length;
-                for (let i = n; i >= 0; i--) {
-                    maxHeapify(data[i]);
-                }
-                console.log(data);
-            }
-
-            function maxHeapify(k) {
-                console.log("tes");
-                let left = 2 * k + 1;
-                let right = 2 * k + 2;
-                let largest = k;
-
-                if (left < data.length && data[left] > data[largest]) {
-                    largest = left;
-                }
-                if (right < data.length && data[right] > data[largest]) {
-                    largest = right;
-                }
-                if (largest != k) {
-                    let temp = data[k];
-                    data[k] = data[largest];
-                    data[largest] = temp;
-                    maxHeapify(largest);
-                }
-            }
-
             $("#insertBtn").on("click", function() {
                 let inserted = $("#insert").val();
                 let parent = 0;
@@ -263,7 +235,7 @@
                 }
 
                 // heap kan
-                buildMaxHeap();
+                buildHeap(data);
 
                 count++;
                 printData();
@@ -278,6 +250,41 @@
                     $("#array").find("tr").append("<td class='border-dark' style='border: 1px solid black'>" + data[i] + "</td>");
                 }
             }
+            function heapify(arr, N, i)
+            {
+                var largest = i; // Initialize largest as root
+                var l = 2 * i + 1; // left = 2*i + 1
+                var r = 2 * i + 2; // right = 2*i + 2
+              
+                // If left child is larger than root
+                if (l < N && arr[l] > arr[largest])
+                    largest = l;
+              
+                // If right child is larger than largest so far
+                if (r < N && arr[r] > arr[largest])
+                    largest = r;
+              
+                // If largest is not root
+                 if (largest != i) {
+                    var swap = arr[i];
+                    arr[i] = arr[largest];
+                    arr[largest] = swap;
+                    $('#t' + i).html(arr[i]);
+                    $('#t' + largest).html(arr[largest]);
+                    
+                    // Recursively heapify the affected sub-tree
+                    heapify(arr, N, largest);
+                }
+            }
+             
+            function buildHeap(arr)
+            {
+                var N = arr.length;
+              
+                // Build heap (rearrange array)
+                for (var i = Math.floor(N / 2) - 1; i >= 0; i--)
+                    heapify(arr, N, i);
+            }            
         })
     </script>
     
