@@ -78,7 +78,9 @@
 
     <div class="container-fluid">
         <div class="row">
-        <div class="col-12" id="my_tree"></div>
+            <div class="col-12" id="my_tree">
+                
+            </div>
         </div>
     </div>
 
@@ -89,7 +91,9 @@
                     4: '',
                     5: '',
                 },
-                3: ''
+                3: {
+                    
+                }
             },
         };
 
@@ -101,55 +105,55 @@
             5: {trad: '5'},
         };
 
-        treeMaker.default(tree, {
-            id: 'my_tree',
-            card_click: function (element) {
-                console.log(element);
-            },
-            treeParams: params,
-            'link_width': '2px',
-            'link_color': '#000',
-        });
+        function isEmpty(obj) {
+            for(var prop in obj) {
+              if(Object.prototype.hasOwnProperty.call(obj, prop)) {
+                return false;
+              }
+            }
+            return JSON.stringify(obj) === JSON.stringify({});
+        }
 
         $(document).ready(function() {
+            const empty = {};
+            let tmp = 0;
             $("#insertBtn").on("click", function() {
                 let inserted = $("#insert").val();
                 console.log(inserted);
-                
-                // console.log(Object.keys(tree)[0]); 
-                tree["1"]["3"] = {[inserted] : ""};
+                // console.log(Object.keys(tree)[0]);
+                // tree["1"]["3"][String(inserted)] = "";
+
+                if (isEmpty(tree["1"]["3"])) {
+                    tree["1"]["3"] = {[inserted] : ""};
+                    params[inserted] = {"trad" : inserted};
+                    tmp = inserted;
+                    console.log('kosong');
+                }
+                else {
+                    tree["1"]["3"] = {[tmp] : "", [inserted] : ""};
+                    params[inserted] = {"trad" : inserted};
+                    console.log('tidak');
+                }
                 // console.log(tree);
                 console.log(tree[0]);
-                params[inserted] = {"trad" : inserted};
 
                 // console.log(JSON.parse("[1, [2, [3, 4]]]"));
-
                 // treeMaker.default(tree, params);
-
-                // treeMaker.default(tree, {
-                //     id: 'my_tree',
-                //     card_click: function (element) {
-                //         console.log(element);
-                //     },
-                //     treeParams: params,
-                //     'link_width': '2px',
-                //     'link_color': '#000',
-                // });
-
+                
                 console.log(tree);
                 console.log(params);
             })
 
-            // treeMaker.default(tree, {
-            // id: 'my_tree',
-            // card_click: function (element) {
-            //     console.log(element);
-            // },
-            // treeParams: params,
-            // 'link_width': '2px',
-            // 'link_color': '#000',
+            treeMaker.default(tree, {
+                id: 'my_tree',
+                card_click: function (element) {
+                    console.log(element);
+                },
+                treeParams: params,
+                'link_width': '2px',
+                'link_color': '#000',
+            });
         });
-        // });
 
         console.log(typeof(tree))
     </script>
