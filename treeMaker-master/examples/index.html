@@ -97,14 +97,15 @@
             },
         };
 
-        let params = {
-            1: {trad: '1'},
-            2: {trad: '2'},
-            3: {trad: '3'},
-            4: {trad: '4'},
-            5: {trad: '5'},
-        };
+        // let params = {
+        //     1: {trad: '1'},
+        //     2: {trad: '2'},
+        //     3: {trad: '3'},
+        //     4: {trad: '4'},
+        //     5: {trad: '5'},
+        // };
 
+<<<<<<< HEAD
         function isEmpty(obj) {
             for(var prop in obj) {
               if(Object.prototype.hasOwnProperty.call(obj, prop)) {
@@ -113,12 +114,24 @@
             }
             return JSON.stringify(obj) === JSON.stringify({});
         }
+=======
+        treeMaker.default(tree, {
+            id: 'my_tree',
+            card_click: function (element) {
+                console.log(element);
+            },
+            // treeParams: params,
+            'link_width': '2px',
+            'link_color': '#000',
+        });
+>>>>>>> 2b1be66e5104abae2edfa3d4cefde9affe344891
 
         $(document).ready(function() {
             const empty = {};
             let tmp = 0;
             $("#insertBtn").on("click", function() {
                 let inserted = $("#insert").val();
+<<<<<<< HEAD
                 console.log(inserted);
                 // console.log(Object.keys(tree)[0]);
                 // tree["1"]["3"][String(inserted)] = "";
@@ -136,11 +149,21 @@
                 }
                 // console.log(tree);
                 console.log(tree[0]);
+=======
+                // console.log(inserted);
+                
+                // console.log(Object.keys(tree)[0]); 
+                tree["1"]["3"] = {left : "", right : ""};
+                // console.log(tree);
+                // console.log(tree["1"]);
+                params[inserted] = {"trad" : inserted};
+>>>>>>> 2b1be66e5104abae2edfa3d4cefde9affe344891
 
                 // console.log(JSON.parse("[1, [2, [3, 4]]]"));
                 // treeMaker.default(tree, params);
                 
                 console.log(tree);
+                console.log(tree["1"]["2"]["4"])
                 console.log(params);
             })
 

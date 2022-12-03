@@ -35,7 +35,8 @@ export default function treeMaker(tree, params) {
     card.classList = 'tree__container__step__card';
     card.id = 'tree__container__step__card__first';
     treeContainer.appendChild(card);
-    const trad = treeParams[Object.keys(tree)[0]] !== undefined && treeParams[Object.keys(tree)[0]].trad !== undefined ? treeParams[Object.keys(tree)[0]].trad : Object.keys(tree)[0].trad;
+    const trad = Object.keys(tree)[0] !== undefined ? Object.keys(tree)[0] : ""
+    // const trad = treeParams[Object.keys(tree)[0]] !== undefined && treeParams[Object.keys(tree)[0]].trad !== undefined ? treeParams[Object.keys(tree)[0]].trad : Object.keys(tree)[0].trad;
     card.innerHTML = `<p class="tree__container__step__card__p" id="card_${Object.keys(tree)[0]}">${trad}</p>`;
 
     addStyleToCard(treeParams[Object.keys(tree)[0]], Object.keys(tree)[0]);
@@ -100,7 +101,7 @@ function iterate(tree, start, from) {
 }
 
 function insert(value, tree, params) {
-    
+
 }
 
 function addStyleToCard(card, key) {

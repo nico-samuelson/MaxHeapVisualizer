@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Max Heap Visualizer</title>
+    <!-- CSS Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <!-- Animate CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <!-- JS Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <!-- <link rel="stylesheet" href="http://cdn.graphalchemist.com/alchemy.min.css">
+    <script type="text/javascript" src="http://cdn.graphalchemist.com/alchemy.min.js"></script> -->
+    <!-- <script type="text/javascript" src="alchemy.js"></script> -->
+    <link href="https://unpkg.com/treeflex/dist/css/treeflex.css" rel="stylesheet">
+    
+    
+    <style>
+        @font-face {
+            font-family: alexandria;
+            src: url(assets/font/Alexandria-Regular.ttf);
+        }
+
+        @font-face {
+            font-family: alexandriaLight;
+            src: url(assets/font/Alexandria-Light.ttf);
+        }
+
+        body {
+            font-family: alexandria;
+            margin: 0;
+            padding: 0;
+            /* background: url("assets/img/") no-repeat fixed;
+            background-size: covers; */
+        }
+
+        .example .tf-nc {
+            /* css here */
+            border-radius: 50%;
+            width: 50px;
+            aspect-ratio: 1 / 1;
+            text-align: center;
+            color: white;
+            background-color: black;
+            display: flex;
+            align-items:center;
+            justify-content: center;
+            transition: all 1s ease;
+        }
+        
+        /* .tf-tree .tf-nc:before, .tf-tree .tf-nc:after {
+            border: 0;
+            background-color: red;
+        }
+
+        .tf-tree li li:before {
+            border: 0;
+            background-color: red;
+        } */
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-dark navbar-expand-lg bg-dark sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand animate__animated animate__zoomIn" href="#">Max Heap Visualizer</a>
+            <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-controls="collapse1" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapse1">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Dropdown
+                    </a>
+                    <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled">Disabled</a>
+                </li>
+                </ul>
+                <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div> -->
+
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <input type="text" id="insert" class="me-3">
+                    <button type="button" class="btn btn-light me-3" id="insertBtn">Insert</button>
+                    <button type="button" class="btn btn-light me-3" id="delBtn">Delete</button>
+                    <button type="button" class="btn btn-light me-3" id="clearBtn">Clear</button>
+            </li>
+        </div>
+    </nav>
+
+    <div class="container-fluid d-flex">
+        <div class="row py-3 d-flex justify-content-center" style="width:100%">
+            <table class="table table-responsive table-bordered border-dark" id="array">
+            </table>
+            <div class="col-12 p-5 tf-tree example d-flex justify-content-center">
+                
+                <ul id="tree-container">
+                    <!-- <li>
+                        <span class="tf-nc" id="t1">1</span>
+                        <ul>
+                            <li>
+                                <span class="tf-nc" id="t2">2</span>
+                                <ul id="parent3">
+                                    <li> 
+                                      <span class="tf-nc" id="t4">4</span>
+                                      <ul id="parent4">
+                                          <li><span class="tf-nc">9</span></li>
+                                          <li><span class="tf-nc">10</span></li>
+                                      </ul>
+                                    </li>
+                                    
+                                    <li>
+                                      <span class="tf-nc">5</span>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <span class="tf-nc" id="t3">3</span>
+                            </li>
+                        </ul>
+                    </li> -->
+                    
+                  <!-- <li>
+                    <span class="tf-nc" id="">1</span>
+                    <ul id="parent2">
+                      <li>
+                        <span class="tf-nc">2</span>
+                        <ul id="parent3">
+                          <li> 
+                            <span class="tf-nc">4</span>
+                            <ul id="parent4">
+                                <li><span class="tf-nc">9</span></li>
+                                <li><span class="tf-nc">10</span></li>
+                            </ul>
+                          </li>
+                          
+                          <li>
+                            <span class="tf-nc">5</span>
+                          </li>
+                        </ul>
+                      </li>
+                      <li>
+                        <span class="tf-nc">3</span>
+                        <ul>
+                          <li><span class="tf-nc">7</span></li>
+                          <li><span class="tf-nc">8</span></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li> -->
+                </ul>
+              </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            let data = [];
+            let count = 0;
+
+            // function heapify(arr, n, i) {
+            //     let largest = i; // Initialize largest as root
+            //     let l = 2 * i + 1; // left = 2*i + 1
+            //     let r = 2 * i + 2; // right = 2*i + 2
+        
+            //     // If left child is larger than root
+            //     if (l < n && arr[l] > arr[largest])
+            //         largest = l;
+        
+            //     // If right child is larger than largest so far
+            //     if (r < n && arr[r] > arr[largest])
+            //         largest = r;
+        
+            //     // If largest is not root
+            //     if (largest != i)
+            //     {
+            //         let swap = arr[i];
+            //         arr[i] = arr[largest];
+            //         arr[largest] = swap;
+        
+            //         // Recursively heapify the affected sub-tree
+            //         heapify(arr, n, largest);
+            //     }
+
+            //     console.log(data);
+            // }
+
+            function buildMaxHeap() {
+                let n = data.length;
+                for (let i = n; i >= 0; i--) {
+                    maxHeapify(data[i]);
+                }
+                console.log(data);
+            }
+
+            function maxHeapify(k) {
+                console.log("tes");
+                let left = 2 * k + 1;
+                let right = 2 * k + 2;
+                let largest = k;
+
+                if (left < data.length && data[left] > data[largest]) {
+                    largest = left;
+                }
+                if (right < data.length && data[right] > data[largest]) {
+                    largest = right;
+                }
+                if (largest != k) {
+                    let temp = data[k];
+                    data[k] = data[largest];
+                    data[largest] = temp;
+                    maxHeapify(largest);
+                }
+            }
+
+            $("#insertBtn").on("click", function() {
+                let inserted = $("#insert").val();
+                let parent = 0;
+                data.push(parseInt(inserted));
+                
+                if (data.length - 1 % 2 == 0)
+                    parent = parseInt((data.length - 3) / 2);
+                else
+                    parent = parseInt((data.length - 2) / 2);
+
+                
+                console.log(count);
+
+                // insert awal
+                if (parent == -1) {
+                    $("#tree-container").append("<li><span class='tf-nc' id='t" + count + "'>" + inserted + "</span></li>")
+                }
+                else if ((data.length - 1) % 2 == 1){
+                    console.log("kiri");
+                    console.log("t" + count );
+                    $("#t" + parent).after("<ul><li><span class='tf-nc' id='t" + count + "'>" + inserted + "</span></li></ul>")
+                }
+                else {
+                    console.log("kanan");
+                    console.log("t" + count );
+                    $("#t" + parent).next().append("<li><span class='tf-nc' id='t" + count + "'>" + inserted + "</span></li>")
+                }
+
+                // heap kan
+                buildMaxHeap();
+
+                count++;
+                printData();
+                // console.log(parent)
+            })
+
+            function printData() {
+                $("#array").find("tr").remove();
+                $("#array").append("<tr class='text-center border-dark'>");
+
+                for(let i = 0; i < data.length; i++) {
+                    $("#array").find("tr").append("<td class='border-dark' style='border: 1px solid black'>" + data[i] + "</td>");
+                }
+            }
+        })
+    </script>
+    
+
+    <!-- <script type="module">
+        import { BinaryTreeNode, drawBinaryTree } from 'binary-tree-visualizer';
+
+        const root = new BinaryTreeNode(100);
+        root.setLeft(new BinaryTreeNode(50));
+        root.setRight(new BinaryTreeNode(45));
+        drawBinaryTree(root, $('canvas'));
+    </script> -->
+
+    
+</body>
+</html>
