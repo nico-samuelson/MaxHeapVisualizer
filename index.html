@@ -178,6 +178,7 @@
         $(document).ready(function() {
             let data = [];
             let count = 0;
+            let parent = 0;
 
             // function heapify(arr, n, i) {
             //     let largest = i; // Initialize largest as root
@@ -208,17 +209,16 @@
 
             $("#insertBtn").on("click", function() {
                 let inserted = $("#insert").val();
-                let parent = 0;
                 data.push(parseInt(inserted));
-                
+
                 if (data.length - 1 % 2 == 0)
                     parent = parseInt((data.length - 3) / 2);
                 else
                     parent = parseInt((data.length - 2) / 2);
-
                 
-                console.log(count);
-
+                console.log("data len:" + data.length)
+                console.log("parent: " + parent)
+                    
                 // insert awal
                 if (parent == -1) {
                     $("#tree-container").append("<li><span class='tf-nc' id='t" + count + "'>" + inserted + "</span></li>")
@@ -240,7 +240,51 @@
                 count++;
                 printData();
                 // console.log(parent)
-            })
+            });
+
+            $("#delBtn").on("click", function(e){
+                e.preventDefault();
+                var id = 't' + (count - 1);
+
+                if (data.length - 1 % 2 == 0)
+                    parent = parseInt((data.length - 3) / 2);
+                else
+                    parent = parseInt((data.length - 2) / 2);
+                data.splice(0, 1);
+
+                buildHeap(data);
+                
+                if (parent == -1) {
+                    clear();
+                }
+                else if ((data.length - 1) % 2 == 1){
+                    document.getElementById(id).parentElement.remove();
+                    count--;
+                    console.log("del kanan")
+                }
+                else {
+                    document.getElementById(id).parentElement.parentElement.remove();
+                    count--;
+                    console.log("del kiri")
+                }
+
+                printData();
+
+                console.log("del")
+            });
+
+            $("#clearBtn").on("click", function(e){
+                data.splice(0, data.length);
+                clear();
+                printData();
+            });
+
+            function clear() {
+                console.log("clear");
+                parent = 0;
+                count = 0;
+                $("#tree-container").empty();
+            };
 
             function printData() {
                 $("#array").find("tr").remove();
@@ -250,6 +294,7 @@
                     $("#array").find("tr").append("<td class='border-dark' style='border: 1px solid black'>" + data[i] + "</td>");
                 }
             }
+
             function heapify(arr, N, i)
             {
                 var largest = i; // Initialize largest as root
@@ -267,10 +312,12 @@
                 // If largest is not root
                  if (largest != i) {
                     var swap = arr[i];
+                    var tmp1 = $('#t' + largest).html();
+                    var tmp2 = $('#t' + i).html();
+                    $('#t' + i).html(tmp1);
+                    $('#t' + largest).html(tmp2);
                     arr[i] = arr[largest];
                     arr[largest] = swap;
-                    $('#t' + i).html(arr[i]);
-                    $('#t' + largest).html(arr[largest]);
                     
                     // Recursively heapify the affected sub-tree
                     heapify(arr, N, largest);
