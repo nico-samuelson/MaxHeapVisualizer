@@ -12,11 +12,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-    <!-- <link rel="stylesheet" href="http://cdn.graphalchemist.com/alchemy.min.css">
-    <script type="text/javascript" src="http://cdn.graphalchemist.com/alchemy.min.js"></script> -->
-    <!-- <script type="text/javascript" src="alchemy.js"></script> -->
+
     <link href="https://unpkg.com/treeflex/dist/css/treeflex.css" rel="stylesheet">
-    
     
     <style>
         @font-face {
@@ -37,8 +34,8 @@
             background-size: covers; */
         }
 
+        /* Node Style */
         .example .tf-nc {
-            /* css here */
             border-radius: 50%;
             width: 50px;
             aspect-ratio: 1 / 1;
@@ -49,17 +46,22 @@
             align-items:center;
             justify-content: center;
             transition: all 1s ease;
+            z-index: 10;
         }
         
-        /* .tf-tree .tf-nc:before, .tf-tree .tf-nc:after {
-            border: 0;
-            background-color: red;
+        /* Vertical Connector Style */
+        .tf-tree .tf-nc:before, .tf-tree .tf-nc:after {
+            border: 1px solid orange;
+            background-color: orange;
+            z-index: 5;
         }
 
+        /* Horizontal Connector Style */
         .tf-tree li li:before {
-            border: 0;
-            background-color: red;
-        } */
+            border: 1px solid orange;
+            background-color: orange;
+            z-index: 5;
+        } 
     </style>
 </head>
 <body>
@@ -99,22 +101,25 @@
                 </form>
             </div> -->
 
-            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li class="nav-item">
                     <input type="text" id="insert" class="me-3">
-                    <button type="button" class="btn btn-light me-3" id="insertBtn">Insert</button>
-                    <button type="button" class="btn btn-light me-3" id="delBtn">Delete</button>
-                    <button type="button" class="btn btn-light me-3" id="clearBtn">Clear</button>
-            </li>
+                    <button type="button" class="btn btn-primary me-3" id="insertBtn">Insert</button>
+                    <button type="button" class="btn btn-danger me-3" id="delBtn">Remove Biggest</button>
+                    <button type="button" class="btn btn-warning me-3" id="clearBtn">Clear</button>
+                </li>
+            </ul>
         </div>
     </nav>
 
     <div class="container-fluid d-flex">
-        <div class="row py-3 d-flex justify-content-center" style="width:100%">
-            <table class="table table-responsive table-bordered border-dark" id="array">
-            </table>
+        <div class="row pt-3 d-flex justify-content-center" style="width:100%">
+            <div class="col-12 table-responsive">
+                <table class="table table-bordered border-dark" id="array">
+                </table>
+            </div>
+
             <div class="col-12 p-5 tf-tree example d-flex justify-content-center">
-                
                 <ul id="tree-container">
                     
                 </ul>
@@ -157,38 +162,41 @@
 
             $("#insertBtn").on("click", function() {
                 let inserted = $("#insert").val();
-                data.push(parseInt(inserted));
 
-                if ((data.length - 1) % 2 == 0)
-                    parent = parseInt((data.length - 3) / 2);
-                else
-                    parent = parseInt((data.length - 2) / 2);
-                
-                console.log("data len:" + data.length)
-                console.log("parent: " + parent)
+                if (inserted != "") {
+                    data.push(parseInt(inserted));
+
+                    if ((data.length - 1) % 2 == 0)
+                        parent = parseInt((data.length - 3) / 2);
+                    else
+                        parent = parseInt((data.length - 2) / 2);
                     
-                // insert awal
-                if (parent == -1) {
-                    $("#tree-container").append("<li><span class='tf-nc' id='t" + (data.length - 1) + "'>" + inserted + "</span></li>")
-                }
-                else if ((data.length - 1) % 2 == 1){
-                    console.log("kiri");
-                    console.log("t" + (data.length - 1));
-                    $("#t" + parent).after("<ul><li><span class='tf-nc' id='t" + (data.length - 1) + "'>" + inserted + "</span></li></ul>")
-                }
-                else {
-                    console.log("kanan");
-                    console.log("t" + (data.length - 1));
-                    $("#t" + parent).next().append("<li><span class='tf-nc' id='t" + (data.length - 1) + "'>" + inserted + "</span></li>")
-                }
+                    console.log("data len:" + data.length)
+                    console.log("parent: " + parent)
+                        
+                    // insert awal
+                    if (parent == -1) {
+                        $("#tree-container").append("<li><span class='tf-nc' id='t" + (data.length - 1) + "'>" + inserted + "</span></li>")
+                    }
+                    else if ((data.length - 1) % 2 == 1){
+                        console.log("kiri");
+                        console.log("t" + (data.length - 1));
+                        $("#t" + parent).after("<ul><li><span class='tf-nc' id='t" + (data.length - 1) + "'>" + inserted + "</span></li></ul>")
+                    }
+                    else {
+                        console.log("kanan");
+                        console.log("t" + (data.length - 1));
+                        $("#t" + parent).next().append("<li><span class='tf-nc' id='t" + (data.length - 1) + "'>" + inserted + "</span></li>")
+                    }
 
-                // heap kan
-                buildHeap(data);
+                    // heap kan
+                    buildHeap(data);
 
-                count++;
-                printData();
-                $("#insert").val("");
-                // console.log(parent)
+                    count++;
+                    printData();
+                    $("#insert").val("");
+                    // console.log(parent)
+                }
             });
 
             $("#delBtn").on("click", function(e){
