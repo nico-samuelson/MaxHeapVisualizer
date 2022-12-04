@@ -116,59 +116,7 @@
             <div class="col-12 p-5 tf-tree example d-flex justify-content-center">
                 
                 <ul id="tree-container">
-                    <!-- <li>
-                        <span class="tf-nc" id="t1">1</span>
-                        <ul>
-                            <li>
-                                <span class="tf-nc" id="t2">2</span>
-                                <ul id="parent3">
-                                    <li> 
-                                      <span class="tf-nc" id="t4">4</span>
-                                      <ul id="parent4">
-                                          <li><span class="tf-nc">9</span></li>
-                                          <li><span class="tf-nc">10</span></li>
-                                      </ul>
-                                    </li>
-                                    
-                                    <li>
-                                      <span class="tf-nc">5</span>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <span class="tf-nc" id="t3">3</span>
-                            </li>
-                        </ul>
-                    </li> -->
                     
-                  <!-- <li>
-                    <span class="tf-nc" id="">1</span>
-                    <ul id="parent2">
-                      <li>
-                        <span class="tf-nc">2</span>
-                        <ul id="parent3">
-                          <li> 
-                            <span class="tf-nc">4</span>
-                            <ul id="parent4">
-                                <li><span class="tf-nc">9</span></li>
-                                <li><span class="tf-nc">10</span></li>
-                            </ul>
-                          </li>
-                          
-                          <li>
-                            <span class="tf-nc">5</span>
-                          </li>
-                        </ul>
-                      </li>
-                      <li>
-                        <span class="tf-nc">3</span>
-                        <ul>
-                          <li><span class="tf-nc">7</span></li>
-                          <li><span class="tf-nc">8</span></li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </li> -->
                 </ul>
               </div>
         </div>
@@ -211,7 +159,7 @@
                 let inserted = $("#insert").val();
                 data.push(parseInt(inserted));
 
-                if (data.length - 1 % 2 == 0)
+                if ((data.length - 1) % 2 == 0)
                     parent = parseInt((data.length - 3) / 2);
                 else
                     parent = parseInt((data.length - 2) / 2);
@@ -221,17 +169,17 @@
                     
                 // insert awal
                 if (parent == -1) {
-                    $("#tree-container").append("<li><span class='tf-nc' id='t" + count + "'>" + inserted + "</span></li>")
+                    $("#tree-container").append("<li><span class='tf-nc' id='t" + (data.length - 1) + "'>" + inserted + "</span></li>")
                 }
                 else if ((data.length - 1) % 2 == 1){
                     console.log("kiri");
-                    console.log("t" + count );
-                    $("#t" + parent).after("<ul><li><span class='tf-nc' id='t" + count + "'>" + inserted + "</span></li></ul>")
+                    console.log("t" + (data.length - 1));
+                    $("#t" + parent).after("<ul><li><span class='tf-nc' id='t" + (data.length - 1) + "'>" + inserted + "</span></li></ul>")
                 }
                 else {
                     console.log("kanan");
-                    console.log("t" + count );
-                    $("#t" + parent).next().append("<li><span class='tf-nc' id='t" + count + "'>" + inserted + "</span></li>")
+                    console.log("t" + (data.length - 1));
+                    $("#t" + parent).next().append("<li><span class='tf-nc' id='t" + (data.length - 1) + "'>" + inserted + "</span></li>")
                 }
 
                 // heap kan
@@ -239,6 +187,7 @@
 
                 count++;
                 printData();
+                $("#insert").val("");
                 // console.log(parent)
             });
 
@@ -250,9 +199,15 @@
                     parent = parseInt((data.length - 3) / 2);
                 else
                     parent = parseInt((data.length - 2) / 2);
-                data.splice(0, 1);
 
-                buildHeap(data);
+                // data pertama dihapus, data terakhir dijadikan data pertama
+                data.splice(0, 1);
+                data.splice(0, 0, data[data.length - 1]);
+                data.splice(data.length - 1, 1);
+
+                // ganti tampilan
+                $("#t0").html($("#t" + (data.length)).html());
+                console.log($("t0").html())
                 
                 if (parent == -1) {
                     clear();
@@ -268,6 +223,7 @@
                     console.log("del kiri")
                 }
 
+                buildHeap(data);
                 printData();
 
                 console.log("del")
@@ -334,17 +290,5 @@
             }            
         })
     </script>
-    
-
-    <!-- <script type="module">
-        import { BinaryTreeNode, drawBinaryTree } from 'binary-tree-visualizer';
-
-        const root = new BinaryTreeNode(100);
-        root.setLeft(new BinaryTreeNode(50));
-        root.setRight(new BinaryTreeNode(45));
-        drawBinaryTree(root, $('canvas'));
-    </script> -->
-
-    
 </body>
 </html>
