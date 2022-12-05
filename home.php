@@ -76,8 +76,8 @@
 
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="btn btn-primary me-6 mt-2" href="index.html">Max Heap Tree Visualization</a>
-                    <a class="btn btn-success me-6 mt-2" href="credit.php" style="margin-left: 20px;">Credits</a>
+                    <a class="btn btn-primary me-6 mt-2 mb-2" href="index.html">Max Heap Tree Visualization</a>
+                    <a class="btn btn-success me-6 mt-2 mb-2" href="credit.php" style="margin-left: 20px;">Credits</a>
                 </li>
             </ul>
         </div>
