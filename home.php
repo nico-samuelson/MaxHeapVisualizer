@@ -77,6 +77,7 @@
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li class="nav-item">
                     <a class="btn btn-primary me-6 mt-2 mb-2" href="index.html">Max Heap Tree Visualization</a>
+                    <button class="btn btn-warning" name="deskripsi" style="margin-left: 20px;">Description</button>
                     <a class="btn btn-success me-6 mt-2 mb-2" href="credits.php" style="margin-left: 20px;">Credits</a>
                 </li>
             </ul>
@@ -86,6 +87,7 @@
     <div class="container-fluid d-flex">
         <div class="row pt-3 d-flex justify-content-center" style="width:100%" style="background-color: black;">
            
+        
         <div id="layoutAuthentication_footer">
             <footer class="py-6 bg-light " style="margin-top: 494px;">
                 <div class="container-fluid px-6">

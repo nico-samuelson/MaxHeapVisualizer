@@ -76,7 +76,12 @@
             <span></span>
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="btn btn-danger me-6 mt-2 mb-2" href="home.php" style="margin-left: 20px;">Home</a>
+                <button class="btn btn-danger" style="width: 120px;height: 50px;margin-left: 1000px;"> 
+                    <a class="nav-link" href="home.php" style="color:white;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-left"><polyline points="11 17 6 12 11 7"></polyline><polyline points="18 17 13 12 18 7"></polyline></svg>
+                        Back
+                    </a>
+                </button>
                 </li>
             </ul>
         </div>
