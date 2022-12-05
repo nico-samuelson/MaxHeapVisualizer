@@ -68,7 +68,7 @@
         } 
     </style>
 </head>
-<body style="background-color: cyan;background-image:url('assets/font/background_SD.jpg')">
+<body style="background-color: cyan;background-image:url('')">
     <!-- Navbar -->
     <nav class="navbar navbar-dark navbar-expand-lg bg-dark sticky-top">
         <div class="container-fluid">
@@ -85,8 +85,16 @@
     <div class="container-fluid d-flex">
         <div class="row pt-3 d-flex justify-content-center" style="width:100%" style="background-color: black;">
            
-        <strong style="color: white;margin-top: 100px;margin-left:100px;"><p>Thankyouu Bu Liliana karena sudah mengajar kami selama 1 semester ini!<br> Semoga semester depan ngga ngajar kami Bu!!!</p></strong>
-            
+        <strong style="color: white;margin-top: 100px;"><p>Thankyouu Bu Liliana karena sudah mengajar kami selama 1 semester ini!<br> Semoga semester depan ngga ngajar kami Bu!!!</p></strong>
+        <div id="layoutAuthentication_footer">
+            <footer class="py-6 bg-light " style="margin-top: 328px;width: 100%;">
+                <div class="container-fluid px-6">
+                    <div class="d-flex align-items-bottom justify-content-between small" >
+                        <div class="text-muted" style="color: white;">Copyright &copy; Kelompok 10 Struktur Data A 2022</div>
+                    </div>
+                </div>
+            </footer>
+        </div>     
     </div>
 
 </body>
