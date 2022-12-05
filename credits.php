@@ -72,8 +72,8 @@
     <!-- Navbar -->
     <nav class="navbar navbar-dark navbar-expand-lg bg-dark sticky-top">
         <div class="container-fluid">
-            <a class="navbar-brand animate__animated animate__zoomIn" href="home.php" style="margin-left: 20px;">Max Heap Visualizer</a>
-
+            <a class="navbar-brand animate__animated animate__zoomIn" href="home.php" style="margin-left: 20px;">Credits</a>
+            <span></span>
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li class="nav-item">
                     <a class="btn btn-danger me-6 mt-2 mb-2" href="home.php" style="margin-left: 20px;">Home</a>
@@ -85,7 +85,7 @@
     <div class="container-fluid d-flex">
         <div class="row pt-3 d-flex justify-content-center" style="width:100%" style="background-color: black;">
            
-        <strong style="color: white;margin-top: 100px;"><p>Thankyouu Bu Liliana karena sudah mengajar kami selama 1 semester ini! Semoga semester depan ngga ngajar kami Bu!!!</p></strong>
+        <strong style="color: white;margin-top: 100px;margin-left:100px;"><p>Thankyouu Bu Liliana karena sudah mengajar kami selama 1 semester ini!<br> Semoga semester depan ngga ngajar kami Bu!!!</p></strong>
             
     </div>
 
