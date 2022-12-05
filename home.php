@@ -77,7 +77,7 @@
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li class="nav-item">
                     <a class="btn btn-primary me-6 mt-2 mb-2" href="index.html">Max Heap Tree Visualization</a>
-                    <button class="btn btn-warning" name="deskripsi" style="margin-left: 20px;">Description</button>
+                    <button class="btn btn-warning" name="deskripsi" style="margin-left: 20px;" data-bs-toggle="modal" data-bs-target="#exampleModal">Description</button>
                     <a class="btn btn-success me-6 mt-2 mb-2" href="credits.php" style="margin-left: 20px;">Credits</a>
                 </li>
             </ul>
@@ -99,4 +99,25 @@
         </div>     
     </div>
 </body>
+
+<!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel" style="position:absolute; margin-left:175px;"><b>Heap Tree</b> </h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <br>
+                        <span>
+                        A Heap is a special Tree-based data structure in which the tree is a complete binary tree. 
+                        Since a heap is a complete binary tree, a heap with N nodes has log N height. 
+                        It is useful to remove the highest or lowest priority element. It is typically represented as an array. 
+                        There are two types of Heaps in the data structure.
+                        </span>
+                    </div>
+                    </div>
+            </div>
+        </div> 
 </html>
