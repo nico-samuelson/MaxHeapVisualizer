@@ -85,7 +85,7 @@
     <div class="container-fluid d-flex">
         <div class="row pt-3 d-flex justify-content-center" style="width:100%" style="background-color: black;">
            
-        <strong style="color: white;"><p>Thankyouu Bu Liliana karena sudah mengajar kami selama 1 semester ini! Semoga semester depan ngga ngajar kami Bu!!!</p></strong>
+        <strong style="color: white;margin-top: 100px;"><p>Thankyouu Bu Liliana karena sudah mengajar kami selama 1 semester ini! Semoga semester depan ngga ngajar kami Bu!!!</p></strong>
             
     </div>
 
