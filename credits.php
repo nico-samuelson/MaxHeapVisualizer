@@ -3,78 +3,91 @@
 ?>
 
 <!DOCTYPE html>
-<html>
-    <header>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<html lang="en">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Credits - Kelompok 11 Struktur Data A</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script type="text/javascript" async="" src="https://www.gstatic.com/recaptcha/releases/Km9gKuG06He-isPsP6saG8cn/recaptcha__en.js" crossorigin="anonymous" integrity="sha384-tL/88+JE9Mv/pJzkZt5DBcS7efRA2LrT4YX0Htu8Rnmat69OIBwraynHJm/fWfbH"></script>
+    <title>Max Heap Visualizer</title>
+    <!-- CSS Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <!-- Animate CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <!-- JS Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
+    <link href="https://unpkg.com/treeflex/dist/css/treeflex.css" rel="stylesheet">
     
-    <style media="screen">
-    .bg {
-      background-image: url('https://wgg.petra.ac.id/assets/background/main/web-malam-pc.jpg');
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: right;
-      height: -webkit-fill-available;
-      width: 100vw;
-      height: 100vh;
-      position: fixed;
-      z-index: -99;
+    <style>
+        @font-face {
+            font-family: alexandria;
+            src: url(assets/font/Alexandria-Regular.ttf);
+        }
 
-    }
+        @font-face {
+            font-family: alexandriaLight;
+            src: url(assets/font/Alexandria-Light.ttf);
+        }
 
-    @media only screen and (max-width: 768px) {
-      .bg {
-        background-image: url('https://wgg.petra.ac.id/assets/background/main/web-malam-smartphone.jpg');
-      }
-    }
-          h1,h2{
-        color: white;
-      }
-      </style>
-    </header>
-    <body>
-    <div class="bg"></div>
-    <div class="mycontainer">
-      <div class="mywrapper">
-        <!-- wilson -->
-        <figure class="snip1033 aos-init aos-animate" data-aos="fade-up" data-aos-offset="10">
-          <img src="" class="sidi foto" alt="Sidi">
-          <figcaption>
-            <div class="left">
-              <h3>CHRISTIAN WILLSON</h3>
-            </div>
-            <div class="right">
-              <h3 class="white">Koordinator IT</h3>
-            </div>
-          </figcaption>
-          <div class="center">
-            <img src="" alt="Sidi">
-          </div>
-          <a href="https://www.instagram.com/" target="_blank"></a>
-        </figure>
-        <!-- steven -->
-        <figure class="snip1033 aos-init aos-animate" data-aos="fade-up" data-aos-offset="300">
-          <img src="" class="steven foto" alt="Steven">
-          <figcaption>
-            <div class="left">
-              <h3>Steven Christando</h3>
-            </div>
-            <div class="right">
-              <h3 class="white">Wakil Koordinator IT</h3>
-            </div>
-          </figcaption>
-          <div class="center">
-            <img src="" alt="">
-          </div>
-          <a href="https://instagram.com/" target="_blank"></a>
-        </figure>
-      </div>
+        body {
+            font-family: alexandria;
+            margin: 0;
+            padding: 0;
+            /* background: url("assets/img/") no-repeat fixed;
+            background-size: covers; */
+        }
+
+        /* Node Style */
+        .example .tf-nc {
+            border-radius: 50%;
+            width: 50px;
+            aspect-ratio: 1 / 1;
+            text-align: center;
+            color: white;
+            background-color: black;
+            display: flex;
+            align-items:center;
+            justify-content: center;
+            transition: all 1s ease;
+            z-index: 10;
+        }
+        
+        /* Vertical Connector Style */
+        .tf-tree .tf-nc:before, .tf-tree .tf-nc:after {
+            border: 1px solid orange;
+            background-color: orange;
+            z-index: 5;
+        }
+
+        /* Horizontal Connector Style */
+        .tf-tree li li:before {
+            border: 1px solid orange;
+            background-color: orange;
+            z-index: 5;
+        } 
+    </style>
+</head>
+<body style="background-color: cyan;background-image:url('assets/font/background_SD.jpg')">
+    <!-- Navbar -->
+    <nav class="navbar navbar-dark navbar-expand-lg bg-dark sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand animate__animated animate__zoomIn" href="home.php" style="margin-left: 20px;">Max Heap Visualizer</a>
+
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="btn btn-danger me-6 mt-2 mb-2" href="home.php" style="margin-left: 20px;">Home</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container-fluid d-flex">
+        <div class="row pt-3 d-flex justify-content-center" style="width:100%" style="background-color: black;">
+           
+        <p>Thankyouu Bu Liliana karena sudah mengajar kami selama 1 semester ini! Semoga semester depan ngga ngajar kami Bu!!!</p>
+            
     </div>
-    </body>
+
+</body>
 </html>
