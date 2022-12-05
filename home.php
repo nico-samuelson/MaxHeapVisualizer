@@ -86,6 +86,8 @@
     <div class="container-fluid d-flex">
         <div class="row pt-3 d-flex justify-content-center" style="width:100%" style="background-color: black;">
            
+
+        
         <!-- footer copy right -->
         <div id="layoutAuthentication_footer">
             <footer class="py-6 bg-light " style="margin-top: 494px;">
