@@ -34,8 +34,8 @@
             font-family: alexandria;
             margin: 0;
             padding: 0;
-            background: url("assets/foto/sidi.JPG") no-repeat fixed;
-            background-size: covers;
+            /* background: url("assets/foto/sidi.JPG") no-repeat fixed;
+            background-size: covers; */
         }
 
         /* Node Style */
