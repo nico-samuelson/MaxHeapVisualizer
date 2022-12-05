@@ -91,6 +91,8 @@
         <div class="row pt-3 d-flex justify-content-center" style="width:100%" style="background-color: black;">
            
         <strong style="color: white;margin-top: 100px;"><p>Thankyouu Bu Liliana karena sudah mengajar kami selama 1 semester ini!<br> Semoga semester depan ngga ngajar kami Bu!!!</p></strong>
+        
+        <!-- footer copy right -->
         <div id="layoutAuthentication_footer">
             <footer class="py-6 bg-light " style="margin-top: 330px;">
                 <div class="container-fluid px-6">
