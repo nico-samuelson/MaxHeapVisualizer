@@ -72,7 +72,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-dark navbar-expand-lg bg-dark sticky-top">
         <div class="container-fluid">
-            <a class="navbar-brand animate__animated animate__zoomIn" href="home.php" style="margin-left: 20px;">Max Heap Visualizer</a>
+            <a class="navbar-brand animate__animated animate__zoomIn" href="home.php" style="margin-left: 20px;">Home</a>
 
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li class="nav-item">
@@ -87,7 +87,7 @@
         <div class="row pt-3 d-flex justify-content-center" style="width:100%" style="background-color: black;">
            
         <div id="layoutAuthentication_footer">
-            <footer class="py-6 bg-light " style="margin-top: 491px;">
+            <footer class="py-6 bg-light " style="margin-top: 494px;">
                 <div class="container-fluid px-6">
                     <div class="d-flex align-items-bottom justify-content-between small" >
                         <div class="text-muted" style="color: white;">Copyright &copy; Kelompok 10 Struktur Data A 2022</div>

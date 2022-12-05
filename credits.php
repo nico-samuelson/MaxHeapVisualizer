@@ -87,7 +87,7 @@
            
         <strong style="color: white;margin-top: 100px;"><p>Thankyouu Bu Liliana karena sudah mengajar kami selama 1 semester ini!<br> Semoga semester depan ngga ngajar kami Bu!!!</p></strong>
         <div id="layoutAuthentication_footer">
-            <footer class="py-6 bg-light " style="margin-top: 328px;width: 100%;">
+            <footer class="py-6 bg-light " style="margin-top: 330px;">
                 <div class="container-fluid px-6">
                     <div class="d-flex align-items-bottom justify-content-between small" >
                         <div class="text-muted" style="color: white;">Copyright &copy; Kelompok 10 Struktur Data A 2022</div>
