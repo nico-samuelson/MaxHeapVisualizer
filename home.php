@@ -85,17 +85,9 @@
 
     <div class="container-fluid d-flex">
         <div class="row pt-3 d-flex justify-content-center" style="width:100%">
-            <div class="col-12 table-responsive">
-                <table class="table table-bordered border-dark" id="array">
-                </table>
-            </div>
+           
 
-            <div class="col-12 p-5 tf-tree example d-flex justify-content-center">
-                <ul id="tree-container">
-                    
-                </ul>
-              </div>
-        </div>
+            
     </div>
 
 </body>
