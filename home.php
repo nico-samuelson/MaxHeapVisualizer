@@ -68,7 +68,7 @@
         } 
     </style>
 </head>
-<body style="background-color: cyan;background-image:url('assets/font/background_SD.jpg')">
+<body style="background-color: cyan;background-image:url('')">
     <!-- Navbar -->
     <nav class="navbar navbar-dark navbar-expand-lg bg-dark sticky-top">
         <div class="container-fluid">
