@@ -125,9 +125,8 @@
                             
                             <h2 style="margin-left: 500px;"><strong>Max Heap Tree</strong></h2>
                             <br>
-                            <p> Selama situasi dan kondisi Pandemi, Seluruh kegiatan dan jadwal courses kami putuskan dalam bentuk online class. Tetapi jangan khawatir, Kita tetap akan memberikan members atau siswa kita dengan beragam fasilitas dan benefit!Hopefully our members can enjoy our courses.</p>
-                            <p> Kita juga memberikan beragam penawaran bagi rekan-rekan yang mengajak teammates atau saudara untuk bergabung dalam courses kami. Jadi, jangan lupa untuk mendaftar.. karena slots terbatas!
-                                See you in the class!</p>
+                            <p> A max-heap is a complete binary tree in which the value in each internal node is greater than or equal to the values in the children of that node. Mapping the elements of a heap into an array is trivial: if a node is stored an index k, then its left child is stored at index 2k + 1 and its right child at index 2k + 2. A-Max Heap is a Complete Binary Tree. A-Max heap is typically represented as an array. The root element will be at Arr[0].</p>
+                            <br>
                                
                         </div>
                         <img src="" />
@@ -139,8 +138,7 @@
                                 <br>
                                 <h2 style="margin-left: 400px;"><b>Implementation of Max Heap Tree</b></h2>
                                 <br>
-                                <p> Tutors kami telah berpengalaman mengajar di dalam bidang komputer science selama 15 tahun.
-                                    Jadi jangan khawatir mengenai kualitas pengajar kami. Kami juga bekerja sama dengan berbagai company baik di dalam ataupun di luar negeri untuk intership program.
+                                <p> 
                                 </p>
                             </div>
                         </div>

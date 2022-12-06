@@ -38,11 +38,19 @@
       }
       </style>
     </header>
-    <body>
-    <div class="bg"></div>
-    <div class="mycontainer">
-      
-      
-    </div>
+    <body style="background-color: cyan;background-image:url('')">
+    <!-- Navbar -->
+    <nav class="navbar navbar-dark navbar-expand-lg bg-dark sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand animate__animated animate__zoomIn" href="home.php" style="margin-left: 20px;">Max Heap Visualizer</a>
+
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <span style="margin-right: 350px;"><strong style="color: white;">Credits To Kelompok 11 Struktur Data A</strong></span>
+                    <a class="btn btn-danger me-6 mt-2 mb-2" href="home.php" style="margin-left: 10px;"> <strong> << Back</strong></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
     </body>
 </html>
