@@ -3,106 +3,128 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
+    <header>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Max Heap Visualizer</title>
-    <!-- CSS Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <!-- Animate CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
-    <!-- JS Bootstrap -->
+    <title>Credits - Kelompok 11 Struktur Data A</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script type="text/javascript" async="" src="https://www.gstatic.com/recaptcha/releases/Km9gKuG06He-isPsP6saG8cn/recaptcha__en.js" crossorigin="anonymous" integrity="sha384-tL/88+JE9Mv/pJzkZt5DBcS7efRA2LrT4YX0Htu8Rnmat69OIBwraynHJm/fWfbH"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-
-    <link href="https://unpkg.com/treeflex/dist/css/treeflex.css" rel="stylesheet">
     
-    <style>
-        @font-face {
-            font-family: alexandria;
-            src: url(assets/font/Alexandria-Regular.ttf);
-        }
+    <style media="screen">
+    .bg {
+      background-image: url('https://wgg.petra.ac.id/assets/background/main/web-malam-pc.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: right;
+      height: -webkit-fill-available;
+      width: 100vw;
+      height: 100vh;
+      position: fixed;
+      z-index: -99;
 
-        @font-face {
-            font-family: alexandriaLight;
-            src: url(assets/font/Alexandria-Light.ttf);
-        }
+    }
 
-        body {
-            font-family: alexandria;
-            margin: 0;
-            padding: 0;
-            /* background: url("assets/foto/sidi.JPG") no-repeat fixed;
-            background-size: covers; */
-        }
-
-        /* Node Style */
-        .example .tf-nc {
-            border-radius: 50%;
-            width: 50px;
-            aspect-ratio: 1 / 1;
-            text-align: center;
-            color: white;
-            background-color: black;
-            display: flex;
-            align-items:center;
-            justify-content: center;
-            transition: all 1s ease;
-            z-index: 10;
-        }
-        
-        /* Vertical Connector Style */
-        .tf-tree .tf-nc:before, .tf-tree .tf-nc:after {
-            border: 1px solid orange;
-            background-color: orange;
-            z-index: 5;
-        }
-
-        /* Horizontal Connector Style */
-        .tf-tree li li:before {
-            border: 1px solid orange;
-            background-color: orange;
-            z-index: 5;
-        } 
-    </style>
-</head>
-<body style="background-color: cyan;background-image:url('')">
-    <!-- Navbar -->
-    <nav class="navbar navbar-dark navbar-expand-lg bg-dark sticky-top">
-        <div class="container-fluid">
-            <a class="navbar-brand animate__animated animate__zoomIn" href="home.php" style="margin-left: 20px;">Credits</a>
-            <span></span>
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                <button class="btn btn-danger" style="width: 120px;height: 50px;margin-left: 1000px;"> 
-                    <a class="nav-link" href="home.php" style="color:white;">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-left"><polyline points="11 17 6 12 11 7"></polyline><polyline points="18 17 13 12 18 7"></polyline></svg>
-                        Back
-                    </a>
-                </button>
-                </li>
-            </ul>
-        </div>
-    </nav>
-
-    <div class="container-fluid d-flex">
-        <div class="row pt-3 d-flex justify-content-center" style="width:100%" style="background-color: black;">
-           
-        <strong style="color: white;margin-top: 100px;"><p>Thankyouu Bu Liliana karena sudah mengajar kami selama 1 semester ini!<br> Semoga semester depan ngga ngajar kami Bu!!!</p></strong>
-        
-        <!-- footer copy right -->
-        <div id="layoutAuthentication_footer">
-            <footer class="py-6 bg-light " style="margin-top: 330px;">
-                <div class="container-fluid px-6">
-                    <div class="d-flex align-items-bottom justify-content-between small" >
-                        <div class="text-muted" style="color: white;">Copyright &copy; Kelompok 10 Struktur Data A 2022</div>
-                    </div>
-                </div>
-            </footer>
-        </div>     
+    @media only screen and (max-width: 768px) {
+      .bg {
+        background-image: url('https://wgg.petra.ac.id/assets/background/main/web-malam-smartphone.jpg');
+      }
+    }
+          h1,h2{
+        color: white;
+      }
+      </style>
+    </header>
+    <body>
+    <div class="bg"></div>
+    <div class="mycontainer">
+      <div class="mywrapper">
+        <!-- wilson -->
+        <figure class="snip1033 aos-init aos-animate" data-aos="fade-up" data-aos-offset="300">
+          <img src="https://wgg.petra.ac.id/Kumpulan%20API/foto/IT/IT_1.png" class="wilson foto" alt="Willson">
+          <figcaption>
+            <div class="left">
+              <h3>CHRISTIAN WILLSON</h3>
+            </div>
+            <div class="right">
+              <h3 class="white">Koordinator IT</h3>
+            </div>
+          </figcaption>
+          <div class="center">
+            <img src="https://wgg.petra.ac.id/assets/icons/logoWGG.png" alt="">
+          </div>
+          <a href="https://www.instagram.com/christianwillson_20/" target="_blank"></a>
+        </figure>
+        <!-- steven -->
+        <figure class="snip1033 aos-init aos-animate" data-aos="fade-up" data-aos-offset="300">
+          <img src="https://wgg.petra.ac.id/Kumpulan%20API/foto/IT/IT_2.png" class="steven foto" alt="Steven">
+          <figcaption>
+            <div class="left">
+              <h3>Steven Christando</h3>
+            </div>
+            <div class="right">
+              <h3 class="white">Wakil Koordinator IT</h3>
+            </div>
+          </figcaption>
+          <div class="center">
+            <img src="https://wgg.petra.ac.id/assets/icons/logoWGG.png" alt="">
+          </div>
+          <a href="https://instagram.com/stc_2701" target="_blank"></a>
+        </figure>
+      </div>
+      <div class="mywrapper">
+        <!-- albert -->
+        <figure class="snip1033 aos-init aos-animate" data-aos="fade-up" data-aos-offset="300">
+          <img src="https://wgg.petra.ac.id/Kumpulan%20API/foto/IT/IT_3.png" class="foto" alt="Albert">
+          <figcaption>
+            <div class="left">
+              <h3>ALBERTUS WILLIAM HUDIONO</h3>
+            </div>
+            <div class="right">
+              <h3 class="white">Sekretaris Bendahara IT</h3>
+            </div>
+          </figcaption>
+          <div class="center">
+            <img src="https://wgg.petra.ac.id/assets/icons/logoWGG.png" alt="">
+          </div>
+          <a href="https://instagram.com/albertuswh" target="_blank"></a>
+        </figure>
+        <!-- anthony -->
+        <figure class="snip1033 aos-init aos-animate" data-aos="fade-up" data-aos-offset="300">
+          <img src="https://wgg.petra.ac.id/Kumpulan%20API/foto/IT/IT_5.png" class="foto" alt="Anthon">
+          <figcaption>
+            <div class="left">
+              <h3>ANTHONY REYNALDI</h3>
+            </div>
+            <div class="right">
+              <h3 class="white">Koordinator Sub-div Absensi &amp; Data</h3>
+            </div>
+          </figcaption>
+          <div class="center">
+            <img src="https://wgg.petra.ac.id/assets/icons/logoWGG.png" alt="">
+          </div>
+          <a href="https://www.instagram.com/anthony_reynaldi/" target="_blank"></a>
+        </figure>
+        <!-- gaby -->
+        <figure class="snip1033 aos-init aos-animate" data-aos="fade-up" data-aos-offset="200">
+          <img src="https://wgg.petra.ac.id/Kumpulan%20API/foto/IT/IT_4.png" class="gab foto" alt="Gaby">
+          <figcaption>
+            <div class="left">
+              <h3>Gabriella evangeline</h3>
+            </div>
+            <div class="right">
+              <h3 class="white">Koordinator Sub-div Web &amp; System</h3>
+            </div>
+          </figcaption>
+          <div class="center">
+            <img src="https://wgg.petra.ac.id/assets/icons/logoWGG.png" alt="">
+          </div>
+          <a href="https://www.instagram.com/bubleygum_" target="_blank"></a>
+        </figure>
+      </div>
     </div>
-
-</body>
+    </body>
 </html>
