@@ -15,42 +15,162 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     
     <style media="screen">
-    .bg {
-      background-image: url('');
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: right;
-      height: -webkit-fill-available;
-      width: 100vw;
-      height: 100vh;
-      position: fixed;
-      z-index: -99;
+        @font-face {
+            font-family: alexandria;
+            src: url(assets/font/Alexandria-Regular.ttf);
+        }
 
-    }
+        @font-face {
+            font-family: alexandriaLight;
+            src: url(assets/font/Alexandria-Light.ttf);
+        }
+        .bg {
+          background-image: url('');
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: right;
+          height: -webkit-fill-available;
+          width: 100vw;
+          height: 100vh;
+          position: fixed;
+          z-index: -99;
 
-    @media only screen and (max-width: 768px) {
-      .bg {
-        background-image: url('');
-      }
-    }
+        }
+        body {
+            font-family: alexandriaLight;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+            background-color: #fff;
+            color: #000;
+            box-sizing: border-box;
+            overflow-x: hidden;
+            /* background: url("assets/img/") no-repeat fixed;
+            background-size: covers; */
+        }
+
+        h2, a {
+            font-family: alexandria;
+        }
+        
+        /* kolom deskripsi/penjelasan */
+        .kolom .deskripsi {
+            font-size: 20px;
+            font-weight: bold;
+            font-family: 'comic sans ms';
+            color: #628395;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+        .row {
+            min-height: 100vh;
+        }
+
+        @media only screen and (max-width: 768px) {
+          .bg {
+            background-image: url('');
+          }
+        }
           h1,h2{
         color: white;
       }
+      #landing {
+            background: url(assets/img/bg_landing.jpg) fixed no-repeat;
+            background-size: cover;
+        }
+
+        #landing h2 {
+            font-size: 4em;
+        }
+        
+        #landing button {
+            font-size: 1.5em;
+        }
+
+      button {
+            width: 9em;
+            height: 2.25em;
+            border-radius: 30pt;
+            font-size: 15px;
+            border: none;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            transition: .5s ease;
+        }
+
+        button::before {
+            content: '';
+            width: 0;
+            height: 2.25em;
+            border-radius: 30pt;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-image: linear-gradient(to right, #0fd850 0%, #f9f047 100%);
+            transition: .5s ease;
+            display: block;
+            z-index: -1;
+        }
+
+        button:hover::before {
+            width: 9em;
+        }
+
+        button:hover {
+            transform:scale(1.1);
+        }
+        .navbar {
+            background-color: transparent;
+            transition: all .3s ease;
+            backdrop-filter: blur(3px);
+        }
+
+        .nav-link:hover {
+            background: linear-gradient(to left, #f9f047 0%, #0fd850 50%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
       </style>
     </header>
-    <body style="background-color: cyan;background-image:url('')">
+    <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-dark navbar-expand-lg bg-dark sticky-top">
+    <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand animate__animated animate__zoomIn" href="home.php" style="margin-left: 20px;">Max Heap Visualizer</a>
+            <a class="navbar-brand" href="home.php" style="margin-left: 20px;">Credits</a>
 
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li>
+                    <a class="nav-link active" href="home.php">Home</a>
+                </li>
                 <li class="nav-item">
-                    <span style="margin-right: 350px;"><strong style="color: white;">Credits To Kelompok 11 Struktur Data A</strong></span>
-                    <a class="btn btn-danger me-6 mt-2 mb-2" href="home.php" style="margin-left: 10px;"> <strong> << Back</strong></a>
+                    <a class="nav-link active" href="index.html">Visualization</a>
                 </li>
             </ul>
         </div>
     </nav>
-    </body>
+
+    <!-- container buat credit foto -->
+    <div class="container-fluid">
+    <div class="row d-flex justify-content-center align-items-center" id="landing" style="font-family:alexandria">
+            <div class="d-flex flex-column align-items-center">
+            </div>  
+        </div>
+    </div>
+
+    <script>
+        AOS.init();
+        var nav= document.querySelector('nav');
+        window.addEventListener('scroll', function(){
+            if (window.pageYOffset > 100){
+                nav.style.backgroundColor = "white";
+                nav.style.boxShadow = "0px 0px 3px #aaa";
+            }
+            else {
+                nav.style.backgroundColor = "transparent";
+                nav.style.boxShadow = "";
+            }
+        });
+    </script>
+</body>
 </html>
