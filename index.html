@@ -33,6 +33,17 @@
             /* background: url("assets/img/") no-repeat fixed;
             background-size: covers; */
         }
+        button {
+            width: 6em;
+            height: 2.25em;
+            border-radius: 30pt;
+            font-size: 15px;
+            border: none;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            transition: .5s ease;
+        }
 
         /* Node Style */
         .example .tf-nc {
@@ -63,14 +74,58 @@
             z-index: 5;
         } 
 
+        .tf-nc:hover{
+            transform:scale(1.1);
+        }
         table {
             table-layout: fixed;
             background-color: cyan;
+            font-weight: bold;
+            background-image: linear-gradient(to right, #0fd850 0%, #f9f047 100%);
         }
         #array{
             font-size: medium;
             border: 10px;
+            background-image: linear-gradient(to right, #0fd850 0%, #f9f047 100%);
+        }
+        button:hover::before {
+            width: 9em;
+            background-image: linear-gradient(to right, #0fd850 0%, #f9f047 100%);
+        }
+        button:hover {
+            transform:scale(1.1);
+            background-color: transparent;
             
+        }
+        #insert{
+            border-radius: 5px;
+           background-color: white;
+           border-color: black;
+        }
+        #insertBtn::before {
+            content: '';
+            width: 0;
+            height: 2.25em;
+            border-radius: 30pt;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-image: linear-gradient(to right, #0fd850 0%, #f9f047 100%);
+            transition: .5s ease;
+            display: block;
+            z-index: -1;
+            transform:scale(1.1);
+        }
+        .navbar {
+            background-color: transparent;
+            transition: all .3s ease;
+            backdrop-filter: blur(3px);
+            
+        }
+        .nav-link:hover {
+            background: linear-gradient(to left, #f9f047 0%, #0fd850 50%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         @keyframes changeColor {
             0%, 100% {
@@ -89,7 +144,7 @@
             <a class="navbar-brand animate__animated animate__zoomIn ms-3" href="home.php">Max Heap Visualizer</a>
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <input type="text" id="insert" class="me-3 my-2">
+                    <input type="text" id="insert" class="me-3 my-2" >
                     <button type="button" class="btn btn-success me-3 my-2" id="insertBtn">Insert</button>
                     <button type="button" class="btn btn-danger me-3 my-2" id="delBtn">Remove Biggest</button>
                     <button type="button" class="btn btn-primary me-3 my-2" id="clearBtn">Clear</button>

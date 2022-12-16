@@ -197,17 +197,6 @@
             </div>
         </div>
 
-        <!--untuk maxheap-->
-        <!-- <div class="row py-5" id="maxheap">
-            <div class="col-lg-2 col-1"></div>
-            <div class="col-lg-8 col-10">
-                <h2 class="text-center"><strong>Max Heap</strong></h2>
-                <br>
-                <p> A max-heap is a complete binary tree in which the value in each internal node is greater than or equal to the values in the children of that node. Mapping the elements of a heap into an array is trivial: if a node is stored an index k, then its left child is stored at index 2k + 1 and its right child at index 2k + 2. A-Max Heap is a Complete Binary Tree. A-Max heap is typically represented as an array. The root element will be at Arr[0].</p>
-                <br>
-            </div>
-        </div> -->
-
         <!--untuk implementasi dari maxheap-->
         <h2 class="text-center" id="implementation"><b>Implementation of Max Heap Tree</b></h2>
         <div class="row mx-5 mx-5 mb-5 pb-5 justify-content-center">
