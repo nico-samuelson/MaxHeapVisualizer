@@ -203,11 +203,12 @@
             <div class="col-lg-3 col-5 me-5 p-5 frosted" data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-duration="1500">
                 <img src="assets/img/landing_icon.png"class="py-3" style="width:100%">
                 <h3 class="text-center">Priority Queue</h3>
-                <p style="text-align: justify">Lorem ipsum dolor sit amet</p>
+                <p style="text-align: justify">Priority Queue is an abstract data type that is similar to a queue, and every element has some priority value associated with it. The priority of the elements in a priority queue determines the order in which elements are served. If in any case the elements have same priority, they are served as per their ordering in the queue.</p>
             </div>
             <div class="col-lg-3 col-5 me-5 p-5 frosted" data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-duration="1500">
                 <img src="assets/img/landing_icon.png"class="py-3" style="width:100%">
                 <h3 class="text-center">Shortest Path</h3>
+                <p style="text-align: justify"> A Shortest-Path Tree rooted at a vertex v of a connected, undirected graph G is a spanning tree T of G, such that the path distance from root v to any other vertex u in T is the shortest path distance from v to u in G.</p>
             </div>
             <div class="col-lg-3 col-5 me-5 p-5 frosted" data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-duration="1500">
                 <img src="assets/img/landing_icon.png" class="py-3" style="width:100%">
