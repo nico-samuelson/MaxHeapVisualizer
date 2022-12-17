@@ -14,6 +14,8 @@
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 
     <link href="https://unpkg.com/treeflex/dist/css/treeflex.css" rel="stylesheet">
+    <!-- Preloader -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     
     <style>
         @font-face {
@@ -30,17 +32,11 @@
             font-family: alexandriaLight;
             margin: 0;
             padding: 0;
-        }
-        button {
-            width: 6em;
-            height: 2.25em;
-            border-radius: 30pt;
-            font-size: 15px;
-            border: none;
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-            transition: .5s ease;
+            scroll-behavior: smooth;
+            background: url(assets/img/bg_home.png) fixed no-repeat;
+            background-size: cover;
+            color: #fff;
+            overflow: overlay;
         }
 
         /* Node Style */
@@ -73,34 +69,39 @@
         } 
 
         .tf-nc:hover{
-            transform:scale(1.15);
+            transform:scale(1.11);
         }
         table {
             table-layout: fixed;
             background-color: cyan;
             font-weight: bold;
-            background-image: linear-gradient(to right, #0fd850 0%, #f9f047 100%);
+            background-image: linear-gradient(to right, #d14b71 0%, #f28f33 100%);
         }
         #array{
             font-size: medium;
             border: 10px;
-            background-image: linear-gradient(to right, #0fd850 0%, #f9f047 100%);
+            background-image: linear-gradient(to right, #d14b71 0%, #f28f33 100%);
         }
-        button:hover::before {
-            width: 9em;
-            background-image: linear-gradient(to right, #0fd850 0%, #f9f047 100%);
+
+        input{
+            border-radius: 30pt !important; 
+            text-align: center;
         }
-        button:hover {
-            transform:scale(1.1);
+
+        button {
+            width: 6em;
+            height: 2.25em;
+            border-radius: 30pt !important;
+            font-size: 15px;
+            border: none;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            transition: .5s ease;
             background-color: transparent;
-            
+            color: white !important;
         }
-        #insert{
-            border-radius: 5px;
-           background-color: white;
-           border-color: black;
-        }
-        #insertBtn::before {
+        button::before{
             content: '';
             width: 0;
             height: 2.25em;
@@ -108,17 +109,32 @@
             position: absolute;
             top: 0;
             left: 0;
-            background-image: linear-gradient(to right, #0fd850 0%, #f9f047 100%);
+            background-image: linear-gradient(to right, #d14b71 0%, #f28f33 100%);
             transition: .5s ease;
             display: block;
             z-index: -1;
-            transform:scale(1.1);
         }
+        button:hover::before {
+            width: 9em;
+            background-image: linear-gradient(to right, #d14b71 0%, #f28f33 100%);
+        }
+        button:hover {
+            transform: scale(1.1);
+            background-color: transparent;
+            transition: .5s ease;
+        }
+    
         .navbar {
             background-color: transparent;
-            transition: all .3s ease;
-            backdrop-filter: blur(3px);
-            
+            transition: all .5s ease;
+            backdrop-filter: blur(3px);   
+        }
+        .navbar-brand:hover {
+            background: linear-gradient(to right, #d14b71 0%, #f28f33 50%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transition: .5 ease;
+            transform: scale(1.1)
         }
         .nav-link:hover {
             background: linear-gradient(to left, #f9f047 0%, #0fd850 50%);
@@ -131,25 +147,40 @@
             }
             70% {
                 background-color: red;
-                transform:scale(1.15);
+                transform:scale(1.1);
             }
+        }
+
+        .preloader{
+            background: #fff url(assets/img/loader.gif) no-repeat center;
+            background-size: 25%;
+            position: fixed;
+            z-index: 999999;
+            width: 100%;
+            height: 100%;
+        }
+        .preloader:before{
+            animation-delay: .5s;
         }
     </style>
 </head>
 <body>
+    <!-- Preloader -->
+    <div class="preloader"></div>
+
     <!-- Navbar -->
     <nav class="navbar navbar-dark navbar-expand-lg bg-dark sticky-top">
         <div class="container-fluid">
-            <a class="navbar-brand animate__animated animate__zoomIn ms-3" href="home.php">Max Heap Visualizer</a>
+            <a class="navbar-brand animate__animated animate__zoomIn ms-3" href="home.html">Max Heap Visualizer</a>
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li class="nav-item">
                     <input type="text" id="insert" class="me-3 my-2" >
-                    <button type="button" class="btn btn-success me-3 my-2" id="insertBtn">Insert</button>
-                    <button type="button" class="btn btn-danger me-3 my-2" id="delBtn">Remove Biggest</button>
-                    <button type="button" class="btn btn-primary me-3 my-2" id="clearBtn">Clear</button>
-                    <button type="button" class="btn btn-secondary me-3 my-2" id="BFS">BFS</button>
-                    <button type="button" class="btn btn-secondary me-3 my-2" id="DFS">DFS</button>
-                    <a href="home.html" class="btn btn-warning me-3 my-2">Home</a>
+                    <button type="button" class="btn me-3 my-2" id="insertBtn">Insert</button>
+                    <button type="button" class="btn me-3 my-2" id="delBtn">Remove Biggest</button>
+                    <button type="button" class="btn me-3 my-2" id="clearBtn">Clear</button>
+                    <button type="button" class="btn me-3 my-2" id="BFS">BFS</button>
+                    <button type="button" class="btn me-3 my-2" id="DFS">DFS</button>
+                    <a href="home.html"><button type="button" class="btn me-3 my-2" id="homeBtn">Home →</button></a>
                 </li>
             </ul>
         </div>
@@ -368,6 +399,10 @@
                 }
             }
         })
+
+        setTimeout(function(){
+            $('.preloader').slideUp();
+        }, 3000);
     </script>
 </body>
 </html>

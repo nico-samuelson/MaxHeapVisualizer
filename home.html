@@ -19,7 +19,9 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
+    <!-- Preloader -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
     <style>
         @font-face {
             font-family: alexandria;
@@ -39,7 +41,7 @@
             background: url(assets/img/bg_home.png) fixed no-repeat;
             background-size: cover;
             color: #fff;
-            overflow:overlay;
+            overflow: overlay;
         }
 
         h2, h3 {
@@ -68,13 +70,15 @@
 
         .navbar {
             background-color: transparent;
-            transition: all .3s ease;
+            transition: all .5s ease;
         }
 
         .nav-link:hover {
             background: linear-gradient(to right, #d14b71 0%, #f28f33 50%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            transition: .5s ease;
+            transform: scale(1.5);
         }
 
         .frosted {
@@ -136,9 +140,25 @@
             transform: scale(1.1);
             color: #fff;
         }
+
+        .preloader{
+            background: #fff url(assets/img/loader.gif) no-repeat center;
+            background-size: 25%;
+            position: fixed;
+            z-index: 999999;
+            width: 100%;
+            height: 100%;
+        }
+        .preloader:before{
+            animation-delay: .5s;
+        }
+
     </style>
 </head>
 <body>
+    <!-- Preloader -->
+    <div class="preloader"></div>
+
     <!-- Navbar -->
     <div class="container-fluid">
         <nav class="navbar navbar-dark navbar-expand-lg fixed-top">
@@ -175,7 +195,7 @@
         <!-- Landing -->
         <div class="row frosted m-5 align-items-center" id="landing" style="font-family:alexandria">
             <div class="col-lg-6 col-12 d-flex flex-column justify-content-center align-items-center">
-                <h2 class="text-center animate__animated animate__zoomIn">Heap Tree</h2>
+                <h2 class="text-center animate__animated animate__zoomIn">Max Heap Tree</h2>
                 <br>
                 <a href="index.html"><button id="landingBtn">Visualize <i class="fa-solid fa-arrow-right"></i></button></a>
             </div>  
@@ -186,7 +206,7 @@
 
         <!--untuk deskripsi-->
         <h2 class="text-center" id="deskripsi"><strong>Overview</strong></h2>
-        <div class="row frosted mx-5 mb-5 p-5" data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-duration="1500">
+        <div class="row frosted mx-5 mt-5 mb-5 p-5" data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-duration="1500">
             <div class="col-lg-2 col-1"></div>
             <div class="col-lg-8 col-10">
                 <p>A heap is a specialized tree-based data structure which is essentially an almost complete tree that satisfies the heap property: in a max heap, for any given node C, if P is a parent node of C, then the key (the value) of P is greater than or equal to the key of C. In a min heap, the key of P is less than or equal to the key of C.The node at the "top" of the heap (with no parents) is called the root node.</p>
@@ -198,7 +218,7 @@
         </div>
 
         <!--untuk implementasi dari maxheap-->
-        <h2 class="text-center" id="implementation"><b>Implementation of Max Heap Tree</b></h2>
+        <h2 class="text-center mt-5" id="implementation"><b>Implementation of Max Heap Tree</b></h2>
         <div class="row mx-5 mx-5 mb-5 pb-5 justify-content-center">
             <div class="col-lg-3 col-5 me-5 p-5 frosted" data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-duration="1500">
                 <img src="assets/img/landing_icon.png"class="py-3" style="width:100%">
@@ -228,6 +248,10 @@
                 nav.classList.remove("bg-dark");
             }
         });
+
+        setTimeout(function(){
+            $('.preloader').slideUp();
+        }, 3000);
     </script>
 </body>
 </html>
