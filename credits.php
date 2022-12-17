@@ -144,7 +144,7 @@
                     <a class="nav-link active" href="home.php">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="index.html">Visualization</a>
+                    <a class="nav-link active" href="index.php">Visualization</a>
                 </li>
             </ul>
         </div>

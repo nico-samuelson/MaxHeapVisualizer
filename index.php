@@ -30,6 +30,8 @@
             font-family: alexandriaLight;
             margin: 0;
             padding: 0;
+            background: url(assets/img/bg_landing.jpg) fixed no-repeat;
+            background-size: cover;
             /* background: url("assets/img/") no-repeat fixed;
             background-size: covers; */
         }
@@ -80,22 +82,93 @@
                 background-color: red;
             }
         }
+
+        li {
+            border-radius: 10px;
+            padding: 25px 30px;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 25px;
+        }
+        .table {
+            background-color: #95A5A6;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+        .col-12 {
+            flex-basis: 100%;
+            border-radius: 10px;
+        }
+
+        .navbar {
+            background-color: transparent;
+            transition: all .3s ease;
+            backdrop-filter: blur(3px);
+        }
+
+        .navbar-brand {
+            background: linear-gradient(to left, #f9f047 0%, #0fd850 50%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        div {
+            background-color: transparent;
+        }
+
+        .btn {
+            width: 9em;
+            height: 2.25em;
+            border-radius: 30pt;
+            font-size: 15px;
+            border: none;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            transition: .5s ease;
+            background-color: transparent;
+        }
+
+        button::before{
+            content: '';
+            width: 0;
+            height: 2.25em;
+            border-radius: 30pt;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-image: linear-gradient(to right, #0fd850 0%, #f9f047 100%);
+            transition: .5s ease;
+            display: block;
+            z-index: -1;
+        }
+
+        button:hover::before{
+            width: 9em;
+        }
+
+        button:hover{
+            transform: scale(1.1);
+            color: black!important;
+        }
     </style>
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-dark navbar-expand-lg bg-dark sticky-top">
-        <div class="container-fluid">
+    <nav class="navbar navbar-dark navbar-expand-sm sticky-top">
+    <div class="container-fluid">
+        <div class="row d-flex flex-column justify-content-center align-items-center" style="font-family:alexandria">
             <a class="navbar-brand animate__animated animate__zoomIn ms-3" href="home.php">Max Heap Visualizer</a>
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li class="nav-item">
                     <input type="text" id="insert" class="me-3 my-2">
-                    <button type="button" class="btn btn-success me-3 my-2" id="insertBtn">Insert</button>
-                    <button type="button" class="btn btn-danger me-3 my-2" id="delBtn">Remove Biggest</button>
-                    <button type="button" class="btn btn-primary me-3 my-2" id="clearBtn">Clear</button>
-                    <button type="button" class="btn btn-secondary me-3 my-2" id="BFS">BFS</button>
-                    <button type="button" class="btn btn-secondary me-3 my-2" id="DFS">DFS</button>
-                    <a href="home.php" class="btn btn-warning me-3 my-2">Home</a>
+                    <button type="button" class="btn me-3 my-2" id="insertBtn">Insert</button>
+                    <button type="button" class="btn me-3 my-2" id="delBtn">Remove Biggest</button>
+                    <button type="button" class="btn me-3 my-2" id="clearBtn">Clear</button>
+                    <button type="button" class="btn me-3 my-2" id="BFS">BFS</button>
+                    <button type="button" class="btn me-3 my-2" id="DFS">DFS</button>
+                    <a href="home.php"><button type="button" class="btn me-3 my-2" id="homeBtn">Home →</button></a>
                 </li>
             </ul>
         </div>

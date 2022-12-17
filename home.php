@@ -63,6 +63,8 @@
 
         .nav-link:hover {
             background: linear-gradient(to left, #f9f047 0%, #0fd850 50%);
+            transition: .5s ease;
+            transform: scale(1.1);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -136,7 +138,7 @@
                     <a class="nav-link active" href="#implementation"> Implementation</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="index.html">Visualization</a>
+                    <a class="nav-link active" href="index.php">Visualization</a>
                 </li>
                 <li>
                     <a class="nav-link active" href="credits.php">Credits</a>
@@ -148,7 +150,7 @@
     <div class="container-fluid">
         <div class="row d-flex justify-content-center align-items-center" id="landing" style="font-family:alexandria">
             <div class="d-flex flex-column align-items-center">
-            <a href="index.html"><button>Visualize →</button></a>
+            <a href="index.php"><button>Visualize →</button></a>
             </div>  
         </div>
 
