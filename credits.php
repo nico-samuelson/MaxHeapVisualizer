@@ -134,6 +134,351 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+body{
+    margin: 0;
+    padding: 0;
+    /* font-family: montserrat!important; */
+    font-family: 'Montserrat', sans-serif!important;
+    /* background-size: cover;
+    background-repeat: no-repeat; */
+}
+.center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    width: 300px;
+    /* background: rgb(19 19 19 / 31%); */
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    /* backdrop-filter: blur(5px); */
+    /* box-shadow: 0 25px 45px rgba(0,0,0,0.1);
+    border: 1px solid rgb(107 107 107 / 50%);
+    border-right: 1px solid rgba(255,255,255,0.2);
+    border-bottom: 1px solid rgba(255,255,255,0.2); */
+    color: white;
+}
+.center h1, h3{
+    text-align: center;
+    padding: 20px 0;
+    border-bottom: 1px solid silver;
+}
+
+.dm {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.addition a {
+    color: white;
+    text-decoration: none;
+  }
+
+  .addition a:hover {
+    color: lightgrey;
+  }
+
+  .logos {
+    padding: 20px 0 0 20px;
+    width: 200px;
+    height: 100px;
+    align-self:flex-start;
+  }
+  .logos .wgg {
+    width: 75%;
+  }
+  .logos .ukp60 {
+    width: 130%;
+  }
+
+  @media only screen and (max-width: 540px){
+      .center{
+          width: 350px;
+      }
+      .g-recaptcha {
+          position: relative;
+          transform: scale(0.77) translateX(-50%);
+          left: 45%;
+          -webkit-transform: scale(0.77) translateX(-50%);
+          transform-origin: 0 0;
+          -webkit-transform-origin: 0 0;
+      }
+  }
+
+.mycontainer{
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.mywrapper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.mywrapper> div{
+    margin: 0 20px;
+}
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,800);
+@import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
+figure.snip1033 {
+  font-family: 'Raleway', Arial, sans-serif;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  margin: 10px;
+  min-width: 220px;
+  max-width: 310px;
+  max-height: 330px;
+  width: 100%;
+  background:transparent;
+
+  animation: textColor 10s ease infinite;
+}
+figure.snip1033::after {
+  transition : all .8s ease;
+  position: absolute;
+  content: "";
+  top: 5vw;
+  /* bottom: 0; */
+  left: 0;
+  right: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  transform: scale(0.75);
+  -webkit-filter: blur(5vw);
+  -moz-filter: blur(5vw);
+  -ms-filter: blur(5vw);
+  filter: blur(5vw);
+  background: linear-gradient(270deg, #F2C9E1, #E04DB0);
+  background-size: 200% 200%;
+  animation: animateGlow 10s ease infinite;
+  height: 0;
+}
+figure.snip1033:hover::after {
+  height: 100%;
+
+}
+@keyframes animateGlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes textColor {
+  0% {
+    color: #E04DB0;
+  }
+  50% {
+    color: #F2C9E1;
+  }
+  100% {
+    color: #E04DB0;
+  }
+}
+.left{
+  color:#E04DB0;
+}
+figure.snip1033 img.foto {
+  background-color: deeppink;
+  background-color: transparent;
+  object-position: bottom;
+}
+
+
+figure.snip1033 img {
+  opacity: 1;
+  width: 100%;
+  position: relative;
+  -webkit-transition: opacity 0.35s;
+  transition: opacity 0.35s;
+}
+figure.snip1033 .center {
+  border-radius: 5px;
+  display: block;
+  content: '';
+  position: absolute;
+  background-color: #6c073d;
+  background-color: transparent;
+  top: 50%;
+  left: 50%;
+  height: 70px;
+  width: 70px;
+  /* box-shadow: 0 0 10px deeppink; */
+  opacity: 0;
+  text-align: center;
+  -webkit-transform: translate(-50%, -50%) rotate(0deg);
+  transform: translate(-50%, -50%) rotate(0deg);
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+figure.snip1033 .center i {
+  font-size: 38px;
+  padding: 6px;
+  color: #ffffff;
+  line-height: 70px;
+  opacity: 0.3;
+}
+figure.snip1033 figcaption {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: left;
+}
+figure.snip1033 figcaption > div {
+  float: left;
+  height: 100%;
+  overflow: hidden;
+  width: 50%;
+  position: relative;
+}
+figure.snip1033 figcaption a {
+  opacity: 0.7;
+}
+figure.snip1033 figcaption a:hover {
+  opacity: 1;
+}
+figure.snip1033 figcaption h3 {
+  background-color: #FFF89C;
+  color: deeppink;
+  word-spacing: -0.1em;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 0.9em;
+  opacity: 0;
+  position: absolute;
+  -webkit-transition: opacity 0.45s, -webkit-transform 0.45s;
+  transition: opacity 0.45s,-webkit-transform 0.45s,-moz-transform 0.45s,-o-transform 0.45s,transform 0.45s;
+}
+figure.snip1033 figcaption .left h3 {
+  border-radius: 5px 0 0 5px;
+  top: 50%;
+  padding: 4px 35px 4px 10px;
+  right: 0;
+  -webkit-transform: translate(100%, 0px);
+  transform: translate(100%, 0px);
+}
+figure.snip1033 figcaption .right h3 {
+  border-radius: 0 5px 5px 0;
+  bottom: 50%;
+  padding: 4px 10px 4px 35px;
+  padding-left: 30px;
+  -webkit-transform: translate(-100%, 0px);
+  transform: translate(-100%, 0px);
+}
+figure.snip1033 a {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+}
+figure.snip1033 .red {
+  background-color: #8c212a;
+}
+figure.snip1033 .yellow {
+  background-color: #945600;
+}
+figure.snip1033 .white {
+  background-color: deeppink;
+  color: white;
+}
+figure.snip1033:hover img,
+figure.snip1033.hover img {
+  opacity: 1;
+  /* filter: grayscale(0.4) hue-rotate(80deg); */
+
+
+}
+figure.snip1033:hover figcaption .left h3,
+figure.snip1033.hover figcaption .left h3 {
+  opacity: 1;
+  -webkit-transform: translate(0%, 0px);
+  transform: translate(0%, 0px);
+}
+figure.snip1033:hover figcaption .right h3,
+figure.snip1033.hover figcaption .right h3 {
+  opacity: 1;
+  -webkit-transform: translate(0%, 0px);
+  transform: translate(0%, 0px);
+}
+figure.snip1033:hover .center,
+figure.snip1033.hover .center {
+  opacity: 1;
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+figure.snip1033:hover .center i,
+figure.snip1033.hover .center i {
+  -webkit-transform: translate(0%, -10px);
+  transform: translate(0%, -10px);
+}
+
+
+.left,.right{
+    margin:0;
+}
+.center h1, h3 {
+
+    border: none;
+}
+.Michael{
+    object-position: 0px -200px ;
+}
+.steven{
+    object-position: -10px -20px;
+    transform:scale(1.08)
+}
+.gab{
+    object-position: -10px -20px;
+}
+figure.snip1033 {
+    border-radius: 10px;
+}
+figure.snip1033 .center {
+    background-color: #ff92cc;
+    background-color: transparent;
+}
+
+.back{
+    margin:auto;
+    padding:10px 20px;
+    border: none;
+    background-color: #18123e;
+    border-radius: 10px;
+    color: white;
+    margin-bottom: 80px;
+}
+.logos{
+  align-self: baseline;
+
+}
+h1,h2{
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(15px);
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+h1{
+margin-bottom: 30px;
+}
+
       </style>
     </header>
     <body>
@@ -155,9 +500,63 @@
 
     <!-- container buat credit foto -->
     <div class="container-fluid">
-    <div class="row d-flex justify-content-center align-items-center" id="landing" style="font-family:alexandria">
-            <div class="d-flex flex-column align-items-center">
-            </div>  
+        <div class="row d-flex justify-content-center align-items-center" id="landing" style="font-family:alexandria">
+            <div class="mycontainer">
+                <div class="mywrapper" id="landing" style="font-family:alexandria">
+                        <!-- Michael Adi Pratama -->
+                    <figure class="snip1033" data-aos="fade-up" data-aos-offset="300">
+                        <img src="assets/pictures/michael.png" class="michael foto" alt="Michael"/>
+                            <figcaption>
+                                <div class="left">
+                                <h3>Michael Adi Pratama</h3>
+                                </div>
+                                <div class="right">
+                                <h3 class="white">C14210016</h3>
+                                </div>
+                            </figcaption>
+                        <a href="https://www.instagram.com/michaeladi26/" target="_blank"></a>
+                    </figure>
+                        <!-- Nico Samuelson -->
+                    <figure class="snip1033" data-aos="fade-up" data-aos-offset="300">
+                        <img src="assets/pictures/sidi.png" class="nico foto" alt="Nico"/>
+                            <figcaption>
+                                <div class="left">
+                                <h3>Nico Samuelson</h3>
+                                </div>
+                                <div class="right">
+                                <h3 class="white">C14210017</h3>
+                                </div>
+                            </figcaption>
+                        <a href="https://www.instagram.com//" target="_blank"></a>
+                    </figure>
+                    <!-- Vincent -->
+                    <figure class="snip1033" data-aos="fade-up" data-aos-offset="300">
+                        <img src="assets/pictures/vincent.png" class="vincent foto" alt="Vincent"/>
+                            <figcaption>
+                                <div class="left">
+                                <h3>Vincent</h3>
+                                </div>
+                                <div class="right">
+                                <h3 class="white">C142100xx</h3>
+                                </div>
+                            </figcaption>
+                        <a href="https://www.instagram.com//" target="_blank"></a>
+                    </figure>
+                    <!-- Sidi Praptama -->
+                    <figure class="snip1033" data-aos="fade-up" data-aos-offset="300">
+                        <img src="assets/pictures/sidi.png" class="sidi foto" alt="Sidi"/>
+                            <figcaption>
+                                <div class="left">
+                                <h3>Sidi Praptama</h3>
+                                </div>
+                                <div class="right">
+                                <h3 class="white">C14210017</h3>
+                                </div>
+                            </figcaption>
+                        <a href="https://www.instagram.com//" target="_blank"></a>
+                    </figure>
+                </div>
+            </div>
         </div>
     </div>
 
