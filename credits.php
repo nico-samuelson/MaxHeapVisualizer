@@ -293,12 +293,6 @@ figure.snip1033:hover::after {
 .left{
   color:#E04DB0;
 }
-figure.snip1033 img.foto {
-  background-color: deeppink;
-  background-color: transparent;
-  object-position: bottom;
-}
-
 
 figure.snip1033 img {
   opacity: 1;
@@ -306,32 +300,6 @@ figure.snip1033 img {
   position: relative;
   -webkit-transition: opacity 0.35s;
   transition: opacity 0.35s;
-}
-figure.snip1033 .center {
-  border-radius: 5px;
-  display: block;
-  content: '';
-  position: absolute;
-  background-color: #6c073d;
-  background-color: transparent;
-  top: 50%;
-  left: 50%;
-  height: 70px;
-  width: 70px;
-  /* box-shadow: 0 0 10px deeppink; */
-  opacity: 0;
-  text-align: center;
-  -webkit-transform: translate(-50%, -50%) rotate(0deg);
-  transform: translate(-50%, -50%) rotate(0deg);
-  -webkit-transition: all 0.4s;
-  transition: all 0.4s;
-}
-figure.snip1033 .center i {
-  font-size: 38px;
-  padding: 6px;
-  color: #ffffff;
-  line-height: 70px;
-  opacity: 0.3;
 }
 figure.snip1033 figcaption {
   position: absolute;
@@ -341,22 +309,9 @@ figure.snip1033 figcaption {
   height: 100%;
   text-align: left;
 }
-figure.snip1033 figcaption > div {
-  float: left;
-  height: 100%;
-  overflow: hidden;
-  width: 50%;
-  position: relative;
-}
-figure.snip1033 figcaption a {
-  opacity: 0.7;
-}
-figure.snip1033 figcaption a:hover {
-  opacity: 1;
-}
 figure.snip1033 figcaption h3 {
-  background-color: #FFF89C;
-  color: deeppink;
+  background-color: #ffffff;
+  color: deepskyblue;
   word-spacing: -0.1em;
   font-weight: 800;
   text-transform: uppercase;
@@ -389,21 +344,15 @@ figure.snip1033 a {
   bottom: 0;
   position: absolute;
 }
-figure.snip1033 .red {
-  background-color: #8c212a;
-}
-figure.snip1033 .yellow {
-  background-color: #945600;
-}
 figure.snip1033 .white {
-  background-color: deeppink;
+  background-color: deepskyblue;
   color: white;
 }
 figure.snip1033:hover img,
 figure.snip1033.hover img {
   opacity: 1;
   /* filter: grayscale(0.4) hue-rotate(80deg); */
-
+  -webkit-transform: translate(0%, 0px);
 
 }
 figure.snip1033:hover figcaption .left h3,
@@ -418,18 +367,6 @@ figure.snip1033.hover figcaption .right h3 {
   -webkit-transform: translate(0%, 0px);
   transform: translate(0%, 0px);
 }
-figure.snip1033:hover .center,
-figure.snip1033.hover .center {
-  opacity: 1;
-  -webkit-transform: translate(-50%, -50%) rotate(45deg);
-  transform: translate(-50%, -50%) rotate(45deg);
-}
-figure.snip1033:hover .center i,
-figure.snip1033.hover .center i {
-  -webkit-transform: translate(0%, -10px);
-  transform: translate(0%, -10px);
-}
-
 
 .left,.right{
     margin:0;
@@ -438,36 +375,24 @@ figure.snip1033.hover .center i {
 
     border: none;
 }
-.Michael{
-    object-position: 0px -200px ;
+.michael{
+    object-position: 0px -10px ;
+    transform:scale(1.06)
 }
-.steven{
-    object-position: -10px -20px;
-    transform:scale(1.08)
+.sidi{
+    object-position: -10px -10px;
+    transform:scale(1.06)
 }
-.gab{
-    object-position: -10px -20px;
+.vincent{
+    object-position: -10px -10px;
+    transform:scale(1.06)
+}
+.nico{
+    object-position: -10px -10px;
+    transform:scale(1.06)
 }
 figure.snip1033 {
     border-radius: 10px;
-}
-figure.snip1033 .center {
-    background-color: #ff92cc;
-    background-color: transparent;
-}
-
-.back{
-    margin:auto;
-    padding:10px 20px;
-    border: none;
-    background-color: #18123e;
-    border-radius: 10px;
-    color: white;
-    margin-bottom: 80px;
-}
-.logos{
-  align-self: baseline;
-
 }
 h1,h2{
   background: rgba(255,255,255,0.1);
@@ -478,8 +403,7 @@ h1,h2{
 h1{
 margin-bottom: 30px;
 }
-
-      </style>
+</style>
     </header>
     <body>
     <!-- Navbar -->
