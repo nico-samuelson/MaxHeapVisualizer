@@ -160,6 +160,10 @@
             from { opacity: 0; }
             to   { opacity: 1; }
         }
+        @keyframes fadeOut {
+            0% {opacity: 1;}
+            100% {opacity: 0;}
+         }
 
         .preloader{
             background: #fff url(assets/img/loader.gif) no-repeat center;
@@ -172,9 +176,7 @@
         .preloader::before{
             animation-delay: .5s;
         }
-        #delBtn.example.tf-nc{
-            -webkit-transition: none;
-        }
+       
     </style>
 </head>
 <body>
