@@ -300,13 +300,11 @@
                     $(t0).fadeOut(30000, clear())
                 }
                 else if ((data.length - 1) % 2 == 1){
-                    // $(t0).fadeOut(3000,remove());
                     document.getElementById(id).parentElement.remove();
                     count--;
                     console.log("del kanan")
                 }
                 else {
-                    // $(t0).fadeOut(3000,remove());
                     document.getElementById(id).parentElement.parentElement.remove();
                     count--;
                     console.log("del kiri")
