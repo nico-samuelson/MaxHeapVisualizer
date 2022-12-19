@@ -160,10 +160,10 @@
             from { opacity: 0; }
             to   { opacity: 1; }
         }
-        @keyframes fadeOut {
-            0% {opacity: 1;}
-            100% {opacity: 0;}
-         }
+        @-webkit-keyframes fadeOut {
+            from { opacity: 1; }
+            to   { opacity: 0; }
+        }
 
         .preloader{
             background: #fff url(assets/img/loader.gif) no-repeat center;
@@ -297,14 +297,16 @@
                 console.log($("t0").html())
                 
                 if (parent == -1) {
-                    clear();
+                    $(t0).fadeOut(30000, clear())
                 }
                 else if ((data.length - 1) % 2 == 1){
+                    // $(t0).fadeOut(3000,remove());
                     document.getElementById(id).parentElement.remove();
                     count--;
                     console.log("del kanan")
                 }
                 else {
+                    // $(t0).fadeOut(3000,remove());
                     document.getElementById(id).parentElement.parentElement.remove();
                     count--;
                     console.log("del kiri")
