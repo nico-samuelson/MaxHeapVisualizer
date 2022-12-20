@@ -53,7 +53,7 @@
             justify-content: center;
             transition: all 1s ease;
             z-index: 10;
-            -webkit-animation: fadein .5s; 
+            -webkit-animation: fadein 3s; 
         }
         
         /* Vertical Connector Style */
@@ -141,8 +141,8 @@
             background: linear-gradient(to right, #d14b71 0%, #f28f33 50%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            transition: all .5s ease;
-            transform: scale(1.1)
+            transition: .5s ease;
+            transform: scale(1.1);
         }
         .nav-link:hover {
             background: linear-gradient(to left, #f9f047 0%, #0fd850 50%);
@@ -154,7 +154,7 @@
                 background-color: #000;
             }
             70% {
-                background-color: #d14b71;
+                background-color: red;
                 transform:scale(1.1);
             }
         }
@@ -178,6 +178,7 @@
         .preloader::before{
             animation-delay: .5s;
         }
+       
     </style>
 </head>
 <body>
@@ -226,9 +227,14 @@
             let parent = 0;
             let i = 0;
 
-            // fungsi insert
             $("#insertBtn").on("click", function() {
                 let inserted = parseInt($("#insert").val());
+
+                // // easter egg
+                // if (inserted == 69) {
+                //     console.log("69")
+                //     $(document.body).css("background", "url('assets/img/bg_surprise.jpg')");
+                // }
 
                 if (!isNaN(inserted) && inserted < 10000) {
                     data.push(inserted);
@@ -237,6 +243,7 @@
                         parent = (data.length - 3) / 2;
                     else
                         parent = (data.length - 2) / 2;
+                    
                         
                     // insert awal
                     if (parent == -1) {
@@ -264,7 +271,6 @@
                 }
             });
 
-            // fungsi delete
             $("#delBtn").on("click", function(e){
                 e.preventDefault();
                 var id = 't' + (count - 1);
@@ -298,26 +304,23 @@
                 printData();
             });
 
-            // fungsi clear
             $("#clearBtn").on("click", function(e){
                 data.splice(0, data.length);
                 clear();
                 printData();
             });
 
-            // fungsi BFS
             $("#BFS").on("click", function() {
                 for (let j = 0; j < data.length; j++) {
                     let animate = "changeColor 1s ease-in-out 1 " + j + "s";
                     document.getElementById('t' + j).style.animation = animate;  
 
-                    setTimeout(function() {
-                        removeAnimation();
-                    }, (data.length + 1) * 1000);
+                setTimeout(function() {
+                    removeAnimation();
+                }, (data.length + 1) * 1000);
                 }
             });
 
-            // fungsi DFS
             $("#DFS").on("click", function() {
                 printInorder(0, 0);
 
@@ -334,7 +337,6 @@
                 $("#tree-container").empty();
             }
 
-            // fungsi pembantu DFS
             function printInorder(x) {
                 if (x >= data.length)
                     return
@@ -346,6 +348,13 @@
                 printInorder(2 * x + 1, i);
                 printInorder(2 * x + 2, i);
             }
+
+            function clear() {
+                console.log("clear");
+                parent = 0;
+                count = 0;
+                $("#tree-container").empty();
+            };
 
             function printData() {
                 $("#array").find("tr").empty();
@@ -368,7 +377,8 @@
                     largest = r;
               
                 // If largest is not root
-                if (largest != i) {
+                 if (largest != i) {
+                    var swap = arr[i];
                     var tmp1 = $('#t' + largest).html();
                     var tmp2 = $('#t' + i).html();
 
@@ -422,7 +432,6 @@
             }
         })
 
-        // fungsi preloader
         setTimeout(function(){
             $('.preloader').slideUp();
         }, 3000);
