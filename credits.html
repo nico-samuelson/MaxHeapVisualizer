@@ -22,15 +22,54 @@
             src: url(assets/font/Alexandria-Light.ttf);
         }
 
+<<<<<<< HEAD
+=======
+        .bg {
+            background-image: url('');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: right;
+            height: -webkit-fill-available;
+            width: 100vw;
+            height: 100vh;
+            position: fixed;
+            z-index: -99;
+        }
+>>>>>>> 25490b8c27a020cfb86fd141771bf4ad1cbb24ba
         body {
             font-family: alexandriaLight;
             margin: 0;
             padding: 0;
             scroll-behavior: smooth;
+<<<<<<< HEAD
             background: url(assets/img/bg_home.png) fixed no-repeat;
             background-size: cover;
             color: #fff;
             overflow: overlay;
+=======
+            background-color: #fff;
+            color: #000;
+            box-sizing: border-box;
+            overflow-x: hidden;
+            /* background: url("assets/img/") no-repeat fixed;
+            background-size: covers; */
+        }
+        h2, a {
+            font-family: alexandria;
+        }
+            
+        /* kolom deskripsi/penjelasan */
+        .kolom .deskripsi {
+            font-size: 20px;
+            font-weight: bold;
+            font-family: 'comic sans ms';
+            color: #628395;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+        .row {
+            min-height: 100vh;
+>>>>>>> 25490b8c27a020cfb86fd141771bf4ad1cbb24ba
         }
 
         @media only screen and (max-width: 768px) {
@@ -41,31 +80,70 @@
         h1,h2{
             color: white;
         }
-        
+
+        #landing {
+            background: url(assets/img/bg_landing.jpg) fixed no-repeat;
+            background-size: cover;
+        }
+        #landing h2 {
+            font-size: 4em;
+        }
+        #landing button {
+            font-size: 1.5em;
+        }
+        button {
+            width: 9em;
+            height: 2.25em;
+            border-radius: 30pt;
+            font-size: 15px;
+            border: none;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            transition: .5s ease;
+        }
+
+        button::before {
+            content: '';
+            width: 0;
+            height: 2.25em;
+            border-radius: 30pt;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-image: linear-gradient(to right, #0fd850 0%, #f9f047 100%);
+            transition: .5s ease;
+            display: block;
+            z-index: -1;
+        }
+        button:hover::before {
+            width: 9em;
+            background-image: linear-gradient(to right, #0fd850 0%, #f9f047 100%);
+        }
+        button:hover {
+            transform:scale(1.1);
+            background-color: transparent;
+        }
         .navbar {
             background-color: transparent;
-            transition: all .5s ease;
+            transition: all .3s ease;
             backdrop-filter: blur(3px);
-        }
-        .navbar:hover::after {
-            transition: .5s ease;
-            transform: scale(1.5);
-        }
-        .nav-link {
-            color: #fff;
+            
         }
         .nav-link:hover {
-            background: linear-gradient(to right, #d14b71 0%, #f28f33 50%);
+            background: linear-gradient(to left, #f9f047 0%, #0fd850 50%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            transition: .5s ease;
-            transform: scale(1.5);
-        }
-        .nav-link:hover::after {
-            transition: all .5s ease;
         }
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
-        
+        body{
+            margin: 0;
+            padding: 0;
+            /* font-family: montserrat!important; */
+            font-family: 'Montserrat', sans-serif!important;
+            /* background-size: cover;
+            background-repeat: no-repeat; */
+        }
         .center{
             position: absolute;
             top: 50%;
@@ -167,10 +245,11 @@
             max-height: 330px;
             width: 100%;
             background:transparent;
+
             animation: textColor 10s ease infinite;
         }
         figure.snip1033::after {
-            transition : all .5s ease;
+            transition : all .8s ease;
             position: absolute;
             content: "";
             top: 5vw;
@@ -186,14 +265,18 @@
             -moz-filter: blur(5vw);
             -ms-filter: blur(5vw);
             filter: blur(5vw);
-            background: linear-gradient(270deg, #d14b71 50%, #f28f33 50%);
+            background: linear-gradient(270deg, #F2C9E1, #E04DB0);
             background-size: 200% 200%;
             animation: animateGlow 10s ease infinite;
             height: 0;
         }
         figure.snip1033:hover::after {
             height: 100%;
+<<<<<<< HEAD
             transition: all .5s ease;
+=======
+
+>>>>>>> 25490b8c27a020cfb86fd141771bf4ad1cbb24ba
         }
         @keyframes animateGlow {
             0% {
@@ -225,10 +308,8 @@
             opacity: 1;
             width: 100%;
             position: relative;
-            -webkit-transition: 0.35s;
-            transition: 0.35s;
-            transition: all.5s ease;
-
+            -webkit-transition: opacity 0.35s;
+            transition: opacity 0.35s;
         }
         figure.snip1033 figcaption {
             position: absolute;
@@ -240,7 +321,7 @@
         }
         figure.snip1033 figcaption h3 {
             background-color: #ffffff;
-            color: #f28f33;
+            color: deepskyblue;
             word-spacing: -0.1em;
             font-weight: 800;
             text-transform: uppercase;
@@ -279,7 +360,7 @@
             position: absolute;
         }
         figure.snip1033 .white {
-            background-color: #d14b71;
+            background-color: deepskyblue;
             color: white;
         }
         figure.snip1033:hover img,
@@ -292,13 +373,21 @@
         }
         figure.snip1033:hover figcaption .left h3,
         figure.snip1033.hover figcaption .left h3 {
+<<<<<<< HEAD
             opacity: 0.7;
+=======
+            opacity: 0.6;
+>>>>>>> 25490b8c27a020cfb86fd141771bf4ad1cbb24ba
             -webkit-transform: translate(0%, 0px);
             transform: translate(0%, 0px);
         }
         figure.snip1033:hover figcaption .right h3,
         figure.snip1033.hover figcaption .right h3 {
+<<<<<<< HEAD
             opacity: 0.7;
+=======
+            opacity: 0.6;
+>>>>>>> 25490b8c27a020cfb86fd141771bf4ad1cbb24ba
             -webkit-transform: translate(0%, 0px);
             transform: translate(0%, 0px);
         }
@@ -311,28 +400,27 @@
         }
         .michael{
             object-position: 0px -10px ;
-            transform:scale(0.69)
+            transform:scale(0.65)
         }
         .sidi{
             object-position: -10px -10px;
-            transform:scale(0.77)
+            transform:scale(0.63)
         }
         .vincent{
             object-position: -10px -10px;
-            transform:scale(0.69)
+            transform:scale(0.65)
         }
         .nico{
             object-position: -10px 10px;
-            transform:scale(0.69)
+            transform:scale(0.63)
         }
         .oka{
-            object-position: -10px 0px;
-            transform:scale(0.69)
+            object-position: -10px -150px;
+            transform:scale(0.60)
         }
         figure.snip1033 {
-            border-radius: 999px;
+            border-radius: 10px;
         }
-
         h1,h2{
             background: rgba(255,255,255,0.1);
             backdrop-filter: blur(15px);
@@ -343,7 +431,7 @@
             margin-bottom: 30px;
         }
         
-        .preloader{
+        /* .preloader{
             background: #fff url(assets/img/loader.gif) no-repeat center;
             background-size: 25%;
             position: fixed;
@@ -353,21 +441,23 @@
         }
         .preloader::before{
             animation-delay: .5s;
-        }
+        } */
     </style>
 </head>
 <body>
     <!-- Preloader -->
-    <div class="preloader"></div>
+    <!-- <div class="preloader"></div> -->
 
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container-fluid">
-            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-                <li class="mx-5">
+            <a class="navbar-brand" href="credits.html" style="margin-left: 20px;">Credits</a>
+
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li>
                     <a class="nav-link active" href="home.html">Home</a>
                 </li>
-                <li class="mx-5">
+                <li class="nav-item">
                     <a class="nav-link active" href="index.html">Visualization</a>
                 </li>
             </ul>
@@ -377,14 +467,14 @@
     <!-- container buat credit foto -->
     <div class="container-fluid">
         <div class="row d-flex justify-content-center align-items-center" id="landing" style="font-family:alexandria">
-            <div class="mycontainer mt-5">
+            <div class="mycontainer">
                 <div class="mywrapper" id="landing" style="font-family:alexandria">
                         <!-- Michael Adi Pratama -->
                     <figure class="snip1033" data-aos="fade-up" data-aos-offset="300">
                         <img src="assets/pictures/michael.png" class="michael foto" alt="Michael"/>
                             <figcaption>
                                 <div class="left">
-                                <h3>Michael Adi</h3>
+                                <h3>Michael Adi Pratama</h3>
                                 </div>
                                 <div class="right">
                                 <h3 class="white">C14210016</h3>
@@ -397,7 +487,7 @@
                         <img src="assets/pictures/nicos.png" class="nico foto" alt="Nico"/>
                             <figcaption>
                                 <div class="left">
-                                <h3>Nico Samuelson</h3>
+                                <h3>Nico Samuelson Tjandra</h3>
                                 </div>
                                 <div class="right">
                                 <h3 class="white">C14210017</h3>
@@ -450,9 +540,22 @@
     </div>
 
     <script>
-        setTimeout(function(){
-            $('.preloader').slideUp();
-        }, 3000);
+        AOS.init();
+        var nav= document.querySelector('nav');
+        window.addEventListener('scroll', function(){
+            if (window.pageYOffset > 100){
+                nav.style.backgroundColor = "white";
+                nav.style.boxShadow = "0px 0px 3px #aaa";
+            }
+            else {
+                nav.style.backgroundColor = "transparent";
+                nav.style.boxShadow = "";
+            }
+        });
+
+        // setTimeout(function(){
+        //     $('.preloader').slideUp();
+        // }, 3000);
     </script>
 </body>
 </html>
