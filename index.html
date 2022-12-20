@@ -279,18 +279,9 @@
                 console.log(data[0])
                 data.splice(data.length - 1, 1);
 
-                $("#t0").css("background-color", "#d14b71");
-
                 // ganti tampilan
-                setTimeout(function() {
-                    $("#t0").html(data[0]);
-                }, 500);
+                $("#t0").html(data[0]);
 
-                setTimeout(function() {
-                    $("#t0").css("background-color", "black");
-                }, 500)
-                
-                
                 if (parent == -1) {
                     clear()
                 }
@@ -310,9 +301,7 @@
             // fungsi clear
             $("#clearBtn").on("click", function(e){
                 data.splice(0, data.length);
-                parent = 0;
-                count = 0;
-                $("#tree-container").empty();
+                clear();
                 printData();
             });
 
@@ -339,6 +328,12 @@
                 i = 0
             })
 
+            function clear() {
+                parent = 0;
+                count = 0;
+                $("#tree-container").empty();
+            }
+
             // fungsi pembantu DFS
             function printInorder(x) {
                 if (x >= data.length)
@@ -360,7 +355,6 @@
             }
 
             function heapify(arr, N, i) {
-                // console.log("tes");
                 var largest = i; // Initialize largest as root
                 var l = 2 * i + 1; // left = 2*i + 1
                 var r = 2 * i + 2; // right = 2*i + 2
@@ -382,14 +376,9 @@
                     $("#t" + i).css("background-color", "#d14b71");
 
                     setTimeout(function() {
-                        $('#t' + largest).fadeOut(250, function() {
-                            $('#t' + largest).html(tmp2).fadeIn(250);
-                        });
-
-                        $('#t' + i).fadeOut(250, function() {
-                            $('#t' + i).html(tmp1).fadeIn(250);
-                        });
-                    }, 750);
+                        $('#t' + largest).html(tmp2);
+                        $('#t' + i).html(tmp1);
+                    }, 500);
 
                     setTimeout(function() {
                         $("#t" + largest).css("background-color", "black");
@@ -403,15 +392,17 @@
                     arr[largest] = swap;
 
                     printData();
-                    heapify(arr, N, largest)
+                    setTimeout(function() {
+                        heapify(arr, N, largest)
+                    }, 1500)
                 }
             }
              
             function buildHeap(arr) {
                 var N = arr.length;
                 var i = Math.floor(N / 2) - 1
-              
                 loop();
+
                 // Build heap (rearrange array)
                 function loop() {
                     setTimeout(function() {
@@ -420,7 +411,7 @@
                         if (i >= 0) {
                             loop();
                         }
-                    }, 1500)
+                    }, 1000)
                 }
             }       
             
