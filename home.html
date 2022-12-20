@@ -73,13 +73,15 @@
             background-color: transparent;
             transition: all .5s ease;
         }
-
         .nav-link:hover {
             background: linear-gradient(to right, #d14b71 0%, #f28f33 50%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             transition: .5s ease;
             transform: scale(1.5);
+        }
+        .nav-link:hover::after {
+            transition: all .5s ease;
         }
 
         .frosted {
@@ -90,6 +92,10 @@
 
         .row {
             min-height: 80vh;
+        }
+
+        .text-center {
+            animation-delay: 3.5s;
         }
 
         #landing h2 {

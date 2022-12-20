@@ -53,7 +53,7 @@
             justify-content: center;
             transition: all 1s ease;
             z-index: 10;
-            -webkit-animation: fadein .5s; 
+            -webkit-animation: fadein 3s; 
         }
         
         /* Vertical Connector Style */
@@ -141,8 +141,8 @@
             background: linear-gradient(to right, #d14b71 0%, #f28f33 50%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            transition: all .5s ease;
-            transform: scale(1.1)
+            transition: .5s ease;
+            transform: scale(1.1);
         }
         .nav-link:hover {
             background: linear-gradient(to left, #f9f047 0%, #0fd850 50%);
@@ -154,7 +154,7 @@
                 background-color: #000;
             }
             70% {
-                background-color: #d14b71;
+                background-color: red;
                 transform:scale(1.1);
             }
         }
@@ -178,6 +178,7 @@
         .preloader::before{
             animation-delay: .5s;
         }
+       
     </style>
 </head>
 <body>
@@ -226,9 +227,14 @@
             let parent = 0;
             let i = 0;
 
-            // fungsi insert
             $("#insertBtn").on("click", function() {
                 let inserted = parseInt($("#insert").val());
+
+                // // easter egg
+                // if (inserted == 69) {
+                //     console.log("69")
+                //     $(document.body).css("background", "url('assets/img/bg_surprise.jpg')");
+                // }
 
                 if (!isNaN(inserted) && inserted < 10000) {
                     data.push(inserted);
@@ -237,15 +243,22 @@
                         parent = (data.length - 3) / 2;
                     else
                         parent = (data.length - 2) / 2;
+                    
+                    console.log("data len:" + data.length)
+                    console.log("parent: " + parent)
                         
                     // insert awal
                     if (parent == -1) {
                         $("#tree-container").append("<li><span class='tf-nc' id='t" + (data.length - 1) + "'>" + inserted + "</span></li>")
                     }
                     else if ((data.length - 1) % 2 == 1){
+                        console.log("kiri");
+                        console.log("t" + (data.length - 1));
                         $("#t" + parent).after("<ul><li><span class='tf-nc' id='t" + (data.length - 1) + "'>" + inserted + "</span></li></ul>")
                     }
                     else {
+                        console.log("kanan");
+                        console.log("t" + (data.length - 1));
                         $("#t" + parent).next().append("<li><span class='tf-nc' id='t" + (data.length - 1) + "'>" + inserted + "</span></li>")
                     }
 
@@ -255,16 +268,18 @@
                     count++;
                     printData();
                     $("#insert").val("");
+                    // console.log(parent)
                 }
                 else if (inserted >= 10000) {
                     alert("Angka terlalu besar!");
                 }
+                
+                
                 else {
                     alert("Input harus angka!")
                 }
             });
 
-            // fungsi delete
             $("#delBtn").on("click", function(e){
                 e.preventDefault();
                 var id = 't' + (count - 1);
@@ -275,60 +290,52 @@
                     parent = (data.length - 2) / 2;
 
                 // data pertama dihapus, data terakhir dijadikan data pertama
-                data[0] = data[data.length - 1]
-                console.log(data[0])
+                data.splice(0, 1);
+                data.splice(0, 0, data[data.length - 1]);
                 data.splice(data.length - 1, 1);
 
-                $("#t0").css("background-color", "#d14b71");
-
                 // ganti tampilan
-                setTimeout(function() {
-                    $("#t0").html(data[0]);
-                }, 500);
-
-                setTimeout(function() {
-                    $("#t0").css("background-color", "black");
-                }, 500)
-                
+                $("#t0").html($("#t" + (data.length)).html());
+                console.log($("t0").html())
                 
                 if (parent == -1) {
-                    clear()
+                    $(t0).fadeOut(30000, clear())
                 }
                 else if ((data.length - 1) % 2 == 1){
                     document.getElementById(id).parentElement.remove();
                     count--;
+                    console.log("del kanan")
                 }
                 else {
                     document.getElementById(id).parentElement.parentElement.remove();
                     count--;
+                    console.log("del kiri")
                 }
 
                 buildHeap(data);
                 printData();
+
+                console.log("del")
             });
 
-            // fungsi clear
             $("#clearBtn").on("click", function(e){
                 data.splice(0, data.length);
-                parent = 0;
-                count = 0;
-                $("#tree-container").empty();
+                clear();
                 printData();
             });
 
-            // fungsi BFS
             $("#BFS").on("click", function() {
                 for (let j = 0; j < data.length; j++) {
                     let animate = "changeColor 1s ease-in-out 1 " + j + "s";
+                    console.log(animate);
                     document.getElementById('t' + j).style.animation = animate;  
 
-                    setTimeout(function() {
-                        removeAnimation();
-                    }, (data.length + 1) * 1000);
+                setTimeout(function() {
+                    removeAnimation();
+                }, (data.length + 1) * 1000);
                 }
             });
 
-            // fungsi DFS
             $("#DFS").on("click", function() {
                 printInorder(0, 0);
 
@@ -339,7 +346,6 @@
                 i = 0
             })
 
-            // fungsi pembantu DFS
             function printInorder(x) {
                 if (x >= data.length)
                     return
@@ -352,6 +358,13 @@
                 printInorder(2 * x + 2, i);
             }
 
+            function clear() {
+                console.log("clear");
+                parent = 0;
+                count = 0;
+                $("#tree-container").empty();
+            };
+
             function printData() {
                 $("#array").find("tr").empty();
 
@@ -359,8 +372,8 @@
                     $("#array").find("tr").append("<td>" + data[i] + "</td>");
             }
 
-            function heapify(arr, N, i) {
-                // console.log("tes");
+            function heapify(arr, N, i)
+            {
                 var largest = i; // Initialize largest as root
                 var l = 2 * i + 1; // left = 2*i + 1
                 var r = 2 * i + 2; // right = 2*i + 2
@@ -374,54 +387,27 @@
                     largest = r;
               
                 // If largest is not root
-                if (largest != i) {
+                 if (largest != i) {
+                    var swap = arr[i];
                     var tmp1 = $('#t' + largest).html();
                     var tmp2 = $('#t' + i).html();
-
-                    $("#t" + largest).css("background-color", "#d14b71");
-                    $("#t" + i).css("background-color", "#d14b71");
-
-                    setTimeout(function() {
-                        $('#t' + largest).fadeOut(250, function() {
-                            $('#t' + largest).html(tmp2).fadeIn(250);
-                        });
-
-                        $('#t' + i).fadeOut(250, function() {
-                            $('#t' + i).html(tmp1).fadeIn(250);
-                        });
-                    }, 750);
-
-                    setTimeout(function() {
-                        $("#t" + largest).css("background-color", "black");
-                        $("#t" + i).css("background-color", "black");
-                    }, 500)
-
-                    // $('#t' + i).html(tmp1);
-                    // $('#t' + largest).html(tmp2);
-                    var swap = arr[i];
+                    $('#t' + i).html(tmp1);
+                    $('#t' + largest).html(tmp2);
                     arr[i] = arr[largest];
                     arr[largest] = swap;
-
-                    printData();
-                    heapify(arr, N, largest)
+                    
+                    // Recursively heapify the affected sub-tree
+                    heapify(arr, N, largest);
                 }
             }
              
-            function buildHeap(arr) {
+            function buildHeap(arr)
+            {
                 var N = arr.length;
-                var i = Math.floor(N / 2) - 1
               
-                loop();
                 // Build heap (rearrange array)
-                function loop() {
-                    setTimeout(function() {
-                        heapify(arr, N, i)
-                        i--;
-                        if (i >= 0) {
-                            loop();
-                        }
-                    }, 1500)
-                }
+                for (var i = Math.floor(N / 2) - 1; i >= 0; i--)
+                    heapify(arr, N, i);
             }       
             
             function removeAnimation() {
@@ -431,7 +417,6 @@
             }
         })
 
-        // fungsi preloader
         setTimeout(function(){
             $('.preloader').slideUp();
         }, 3000);
