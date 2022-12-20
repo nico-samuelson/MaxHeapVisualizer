@@ -58,15 +58,15 @@
         
         /* Vertical Connector Style */
         .tf-tree .tf-nc:before, .tf-tree .tf-nc:after {
-            border: 1px solid green;
-            background-color: green;
+            border: 1px solid #f28f33;
+            background-color: #f28f33;
             z-index: 5;
         }
 
         /* Horizontal Connector Style */
         .tf-tree li li:before {
-            border: 1px solid green;
-            background-color: green;
+            border: 1px solid #f28f33;
+            background-color: #f28f33;
             z-index: 5;
         } 
 
@@ -131,24 +131,23 @@
         }
         .navbar {
             background-color: transparent;
-            transition: all .5s ease;
+            transition: .5s ease;
             backdrop-filter: blur(3px);   
         }
         .navbar-brand {
             animation-delay: 3.5s;
+            transition: .5s ease;
+            background: white;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         .navbar-brand:hover {
             background: linear-gradient(to right, #d14b71 0%, #f28f33 50%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            transition: .5s ease;
             transform: scale(1.1);
         }
-        .nav-link:hover {
-            background: linear-gradient(to left, #f9f047 0%, #0fd850 50%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+ 
         @keyframes changeColor {
             0%, 100% {
                 background-color: #000;
@@ -178,7 +177,18 @@
         .preloader::before{
             animation-delay: .5s;
         }
-       
+
+        iframe {
+            opacity: 0.1;
+            transition: .5s ease;
+            transform: translate(-55px, 0px);
+            border-radius: 100px;
+        }
+        iframe:hover {
+            opacity: 1;
+            transform: translate(0%, 0px);
+            border-radius: 0px;
+        }
     </style>
 </head>
 <body>
@@ -213,12 +223,15 @@
                     <tr></tr>
                 </table>
             </div>
-
             <div class="col-12 p-5 tf-tree example d-flex justify-content-center">
                 <ul id="tree-container"></ul>
               </div>
         </div>
     </div>
+
+    
+    <iframe class="fixed-bottom" width="75px" height="75px" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1190917987&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+    
 
     <script>
         $(document).ready(function() {
@@ -244,21 +257,15 @@
                     else
                         parent = (data.length - 2) / 2;
                     
-                    console.log("data len:" + data.length)
-                    console.log("parent: " + parent)
                         
                     // insert awal
                     if (parent == -1) {
                         $("#tree-container").append("<li><span class='tf-nc' id='t" + (data.length - 1) + "'>" + inserted + "</span></li>")
                     }
                     else if ((data.length - 1) % 2 == 1){
-                        console.log("kiri");
-                        console.log("t" + (data.length - 1));
                         $("#t" + parent).after("<ul><li><span class='tf-nc' id='t" + (data.length - 1) + "'>" + inserted + "</span></li></ul>")
                     }
                     else {
-                        console.log("kanan");
-                        console.log("t" + (data.length - 1));
                         $("#t" + parent).next().append("<li><span class='tf-nc' id='t" + (data.length - 1) + "'>" + inserted + "</span></li>")
                     }
 
@@ -268,13 +275,10 @@
                     count++;
                     printData();
                     $("#insert").val("");
-                    // console.log(parent)
                 }
                 else if (inserted >= 10000) {
                     alert("Angka terlalu besar!");
                 }
-                
-                
                 else {
                     alert("Input harus angka!")
                 }
@@ -290,32 +294,27 @@
                     parent = (data.length - 2) / 2;
 
                 // data pertama dihapus, data terakhir dijadikan data pertama
-                data.splice(0, 1);
-                data.splice(0, 0, data[data.length - 1]);
+                data[0] = data[data.length - 1];
+                console.log(data[0]);
                 data.splice(data.length - 1, 1);
 
                 // ganti tampilan
-                $("#t0").html($("#t" + (data.length)).html());
-                console.log($("t0").html())
-                
+                $("#t0").html(data[0]);
+
                 if (parent == -1) {
-                    $(t0).fadeOut(30000, clear())
+                    clear()
                 }
                 else if ((data.length - 1) % 2 == 1){
                     document.getElementById(id).parentElement.remove();
                     count--;
-                    console.log("del kanan")
                 }
                 else {
                     document.getElementById(id).parentElement.parentElement.remove();
                     count--;
-                    console.log("del kiri")
                 }
 
                 buildHeap(data);
                 printData();
-
-                console.log("del")
             });
 
             $("#clearBtn").on("click", function(e){
@@ -327,7 +326,6 @@
             $("#BFS").on("click", function() {
                 for (let j = 0; j < data.length; j++) {
                     let animate = "changeColor 1s ease-in-out 1 " + j + "s";
-                    console.log(animate);
                     document.getElementById('t' + j).style.animation = animate;  
 
                 setTimeout(function() {
@@ -346,9 +344,15 @@
                 i = 0
             })
 
+            function clear() {
+                parent = 0;
+                count = 0;
+                $("#tree-container").empty();
+            }
+
             function printInorder(x) {
                 if (x >= data.length)
-                    return
+                    return;
 
                 let animate = "changeColor 1s ease-in-out 1 " + i + "s";
                 document.getElementById('t' + x).style.animation = animate;      
@@ -372,8 +376,7 @@
                     $("#array").find("tr").append("<td>" + data[i] + "</td>");
             }
 
-            function heapify(arr, N, i)
-            {
+            function heapify(arr, N, i) {
                 var largest = i; // Initialize largest as root
                 var l = 2 * i + 1; // left = 2*i + 1
                 var r = 2 * i + 2; // right = 2*i + 2
@@ -391,23 +394,48 @@
                     var swap = arr[i];
                     var tmp1 = $('#t' + largest).html();
                     var tmp2 = $('#t' + i).html();
-                    $('#t' + i).html(tmp1);
-                    $('#t' + largest).html(tmp2);
+
+                    $("#t" + largest).css("background-color", "#d14b71");
+                    $("#t" + i).css("background-color", "#d14b71");
+
+                    setTimeout(function() {
+                        $('#t' + largest).html(tmp2);
+                        $('#t' + i).html(tmp1);
+                    }, 500);
+
+                    setTimeout(function() {
+                        $("#t" + largest).css("background-color", "black");
+                        $("#t" + i).css("background-color", "black");
+                    }, 500)
+
+                    // $('#t' + i).html(tmp1);
+                    // $('#t' + largest).html(tmp2);
+                    var swap = arr[i];
                     arr[i] = arr[largest];
                     arr[largest] = swap;
-                    
-                    // Recursively heapify the affected sub-tree
-                    heapify(arr, N, largest);
+
+                    printData();
+                    setTimeout(function() {
+                        heapify(arr, N, largest)
+                    }, 1500)
                 }
             }
              
-            function buildHeap(arr)
-            {
+            function buildHeap(arr) {
                 var N = arr.length;
-              
+                var i = Math.floor(N / 2) - 1
+                loop();
+
                 // Build heap (rearrange array)
-                for (var i = Math.floor(N / 2) - 1; i >= 0; i--)
-                    heapify(arr, N, i);
+                function loop() {
+                    setTimeout(function() {
+                        heapify(arr, N, i)
+                        i--;
+                        if (i >= 0) {
+                            loop();
+                        }
+                    }, 1000)
+                }
             }       
             
             function removeAnimation() {

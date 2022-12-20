@@ -58,16 +58,6 @@
             border-radius: 20pt;
             background: #555; 
         }
-        
-        /* kolom deskripsi/penjelasan */
-        /* .kolom .deskripsi {
-            font-size: 20px;
-            font-weight: bold;
-            font-family: 'comic sans ms';
-            color: #628395;
-            margin-left: 20px;
-            margin-right: 20px;
-        } */
 
         .navbar {
             background-color: transparent;
@@ -80,7 +70,7 @@
             transition: .5s ease;
             transform: scale(1.5);
         }
-        .nav-link:hover::after {
+        .nav-link::after {
             transition: all .5s ease;
         }
 
@@ -95,6 +85,9 @@
         }
 
         .text-center {
+            background: linear-gradient(to right, #d14b71 0%, #f28f33 50%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             animation-delay: 3.5s;
         }
 
@@ -160,6 +153,17 @@
             animation-delay: .5s;
         }
 
+        iframe {
+            opacity: 0.1;
+            transition: .5s ease;
+            transform: translate(-55px, 0px);
+            border-radius: 100px;
+        }
+        iframe:hover {
+            opacity: 1;
+            transform: translate(0%, 0px);
+            border-radius: 0px;
+        }
     </style>
 </head>
 <body>
@@ -216,37 +220,43 @@
         <div class="row frosted mx-5 mt-5 mb-5 p-5" data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-duration="1500">
             <div class="col-lg-2 col-1"></div>
             <div class="col-lg-8 col-10">
-                <p>A heap is a specialized tree-based data structure which is essentially an almost complete tree that satisfies the heap property: in a max heap, for any given node C, if P is a parent node of C, then the key (the value) of P is greater than or equal to the key of C. In a min heap, the key of P is less than or equal to the key of C.The node at the "top" of the heap (with no parents) is called the root node.</p>
+                <p style="text-align: justify">A heap is a specialized tree-based data structure which is essentially an almost complete tree that satisfies the heap property: in a max heap, for any given node C, if P is a parent node of C, then the key (the value) of P is greater than or equal to the key of C. In a min heap, the key of P is less than or equal to the key of C.The node at the "top" of the heap (with no parents) is called the root node.</p>
                 <br>
-                <p>The heap is one maximally efficient implementation of an abstract data type called a priority queue, and in fact, priority queues are often referred to as "heaps", regardless of how they may be implemented. In a heap, the highest (or lowest) priority element is always stored at the root. However, a heap is not a sorted structure; it can be regarded as being partially ordered. A heap is a useful data structure when it is necessary to repeatedly remove the object with the highest (or lowest) priority, or when insertions need to be interspersed with removals of the root node.</p>
+                <p style="text-align: justify">The heap is one maximally efficient implementation of an abstract data type called a priority queue, and in fact, priority queues are often referred to as "heaps", regardless of how they may be implemented. In a heap, the highest (or lowest) priority element is always stored at the root. However, a heap is not a sorted structure; it can be regarded as being partially ordered. A heap is a useful data structure when it is necessary to repeatedly remove the object with the highest (or lowest) priority, or when insertions need to be interspersed with removals of the root node.</p>
                 <br>
-                <p> A Heap is a special Tree-based data structure in which the tree is a complete binary tree. Since a heap is a complete binary tree, a heap with N nodes has log N height. It is useful to remove the highest or lowest priority element. It is typically represented as an array. There are two types of Heaps in the data structure.</p>
+                <p style="text-align: justify">A Heap is a special Tree-based data structure in which the tree is a complete binary tree. Since a heap is a complete binary tree, a heap with N nodes has log N height. It is useful to remove the highest or lowest priority element. It is typically represented as an array. There are two types of Heaps in the data structure.</p>
             </div>
         </div>
 
         <!--untuk implementasi dari maxheap-->
-        <h2 class="text-center mt-5" id="implementation"><b>Implementation of Max Heap Tree</b></h2>
+        <h2 class="text-center mt-5 mb-5" id="implementation"><b>Implementation of Max Heap Tree</b></h2>
         <div class="row mx-5 mx-5 mb-5 pb-5 justify-content-center">
             <div class="col-lg-3 col-5 me-5 p-5 frosted" data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-duration="1500">
-                <img src="assets/img/priorityqueue.png"class="py-3" style="width:100%">
+                <img src="assets/img/priority_queue.png"class="py-3" style="width:100%">
                 <h3 class="text-center">Priority Queue</h3>
-                <p style="text-align: justify">Priority Queue is an abstract data type that is similar to a queue, and every element has some priority value associated with it. The priority of the elements in a priority queue determines the order in which elements are served. If in any case the elements have same priority, they are served as per their ordering in the queue.</p>
+                <p style="text-align: justify" class="mt-4">
+                    Priority Queue is an abstract data type that is similar to a queue, and every element has some priority value associated with it. The priority of the elements in a priority queue determines the order in which elements are served. If in any case the elements have same priority, they are served as per their ordering in the queue.
+                </p>
             </div>
             <div class="col-lg-3 col-5 me-5 p-5 frosted" data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-duration="1500">
-                <img src="assets/img/shortestpath.png"class="mt-5 py-3" style="width:100%;">
+                <img src="assets/img/shortest_path.png"class="py-3" style="width:100%;">
                 <h3 class="text-center">Shortest Path</h3>
                 <p style="text-align: justify" class="mt-4"> 
-                        A Shortest-Path Tree rooted at a vertex v of a connected, undirected graph G is a spanning tree T of G, such that the path distance from root v to any other vertex u in T is the shortest path distance from v to u in G.
+                    A Shortest-Path Tree rooted at a vertex v of a connected, undirected graph G is a spanning tree T of G, such that the path distance from root v to any other vertex u in T is the shortest path distance from v to u in G.
                 </p>
-                
             </div>
             <div class="col-lg-3 col-5 me-5 p-5 frosted" data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-duration="1500">
-                <img src="assets/img/landing_icon.png" class="py-3" style="width:100%">
+                <img src="assets/img/statistic.png" class="py-3" style="width:100%">
                 <h3 class="text-center">Statistics</h3>
+                <p style="text-align: justify" class="mt-4"> 
+                    The Heap data structure can be used to find the kth smallest / largest element in an array quickly and effectively.
+                </p>
             </div>
         </div>
     </div>
 
+    <iframe class="fixed-bottom" width="75px" height="75px" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1190917987&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+    
     <script>
         AOS.init();
         var nav= document.querySelector('nav');
