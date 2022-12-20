@@ -139,7 +139,7 @@
             background: linear-gradient(to right, #d14b71 0%, #f28f33 50%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            transition: .5 ease;
+            transition: all .5s ease;
             transform: scale(1.1)
         }
         .nav-link:hover {
@@ -160,7 +160,7 @@
             from { opacity: 0; }
             to   { opacity: 1; }
         }
-        @-webkit-keyframes fadeOut {
+        @-webkit-keyframes fadeout {
             from { opacity: 1; }
             to   { opacity: 0; }
         }
@@ -228,10 +228,10 @@
             $("#insertBtn").on("click", function() {
                 let inserted = parseInt($("#insert").val());
 
-                // easter egg
-                // if (inserted == 37) {
-                //     console.log("37")
-                //     $(document.body).css("background", "url('assets/font/background_SD.jpg')");
+                // // easter egg
+                // if (inserted == 69) {
+                //     console.log("69")
+                //     $(document.body).css("background", "url('assets/img/bg_surprise.jpg')");
                 // }
 
                 if (!isNaN(inserted) && inserted < 10000) {
