@@ -136,10 +136,7 @@
         }
         .navbar-brand {
             animation-delay: 3.5s;
-            transition: .5s ease;
-            background: white;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: white;
         }
         .navbar-brand:hover {
             background: linear-gradient(to right, #d14b71 0%, #f28f33 50%);
@@ -243,12 +240,7 @@
             $("#insertBtn").on("click", function() {
                 let inserted = parseInt($("#insert").val());
 
-                // // easter egg
-                // if (inserted == 69) {
-                //     console.log("69")
-                //     $(document.body).css("background", "url('assets/img/bg_surprise.jpg')");
-                // }
-
+                
                 if (!isNaN(inserted) && inserted < 10000) {
                     data.push(inserted);
 
@@ -256,8 +248,7 @@
                         parent = (data.length - 3) / 2;
                     else
                         parent = (data.length - 2) / 2;
-                    
-                        
+                
                     // insert awal
                     if (parent == -1) {
                         $("#tree-container").append("<li><span class='tf-nc' id='t" + (data.length - 1) + "'>" + inserted + "</span></li>")
