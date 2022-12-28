@@ -1,8 +1,10 @@
-### Proyek SD A Kelompok 11
+# Proyek Struktur Data Kelas A Kelompok 11
+## 1. Michael Adi Pratama C14210016
+## 2. Nico Samuelson T    C14210017
+## 3. Sidi Praptama       C14210273
+## 4. Vincent Carel       C14210085
+## 5. Christofer Oka      C14210090
 
 
-LAPORAN Proyek HEAP Tree Visualizer 
-https://docs.google.com/document/d/1aDWnplbHoN5J8Z8HzXySF3wL2tRrcy4iGMl8H8Y_Adw/edit?usp=sharing
-
-Library yang Digunakan:
+# Library yang Digunakan:
 - TreeFlex (https://dumptyd.github.io/treeflex/)
