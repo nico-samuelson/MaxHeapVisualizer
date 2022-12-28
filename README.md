@@ -17,3 +17,6 @@ https://en.wikipedia.org/wiki/Heap_(data_structure)
 https://en.wikipedia.org/wiki/Shortest_path_problem
 
 https://www.geeksforgeeks.org/difference-between-min-heap-and-max-heap/
+
+# Video Demo Proyek /Teaser Demo:
+https://drive.google.com/file/d/1b3z5WoxbtXRYs90MT8A9YIGne1rseb1_/view
